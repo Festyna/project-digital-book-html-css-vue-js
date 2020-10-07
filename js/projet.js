@@ -41,8 +41,33 @@ var vm = new Vue({
     el: "#app",
     data: {
         disparaitre: true,
-        message: false
+        message: false,
+        pseudo: "",
+        date: "",
+        message: "",
+
+
+        router: router,
+        todos: [{
+            pseudo: "Steven",
+            date: "05/10/2020",
+            message: "Trop cool ce site, un plaisir !!!",
+            completed: false,
+        }],
     },
-    methods: {},
-    router: router
+
+
+    methods: {
+
+
+        addTodo() {
+            this.todos.push({
+                pseudo: this.pseudo,
+                completed: false,
+                date: this.date,
+                message: this.message,
+            });
+        },
+    },
+    computed: {},
 });
