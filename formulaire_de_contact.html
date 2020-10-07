@@ -14,21 +14,26 @@
     <!--Navbar-->
 
     <!--FIN Navbar-->
-    <form v-if='disparaitre'>
-        <div>
-            <p>NOM</p>
-            <input>
-            <p>PRENOM</p>
-            <input>
-            <p>MAIL</p>
-            <input>
-            <p>Message</p>
-            <input>
-        </div>
-        <button>Envoyer</button>
-    </form>
+    <div id="app">
+        <form v-if='disparaitre'>
+
+            <div>
+                <p>NOM</p>
+                <input>
+                <p>PRENOM</p>
+                <input>
+                <p>MAIL</p>
+                <input>
+                <p>Message</p>
+                <input>
+            </div>
+
+            <button @click="disparaitre=!disparaitre">Envoyer</button>
 
 
+        </form>
+        <div v-else="message" class="popup">lol</div>
+    </div>
 
     <!--Footer-->
     <!--FIN Footer-->
