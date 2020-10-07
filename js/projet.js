@@ -28,7 +28,7 @@ const router = new VueRouter({
 
 var vm = new Vue({
     el: "#app",
-    data: {},
+    data: { disparaitre: "", },
     methods: {},
     router: router
 });
