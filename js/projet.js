@@ -11,11 +11,22 @@ const formulaire_contact = {
     template: `<div></div>`
 };
 
-var routes = [
-    { path: '/accueil', component: accueil },
-    { path: '/boutique', component: boutique },
-    { path: '/livre-or', component: livre_or },
-    { path: '/formulaire', component: formulaire_contact },
+var routes = [{
+        path: '/accueil',
+        component: accueil
+    },
+    {
+        path: '/boutique',
+        component: boutique
+    },
+    {
+        path: '/livre-or',
+        component: livre_or
+    },
+    {
+        path: '/formulaire',
+        component: formulaire_contact
+    },
 
 ];
 
@@ -28,7 +39,10 @@ const router = new VueRouter({
 
 var vm = new Vue({
     el: "#app",
-    data: { disparaitre: true, message: false },
+    data: {
+        disparaitre: true,
+        message: false
+    },
     methods: {},
     router: router
 });
