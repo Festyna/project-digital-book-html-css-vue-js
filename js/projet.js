@@ -1,27 +1,89 @@
-const accueil = {
-    template: `<div></div>`
-};
-const boutique = {
-    template: `<div>
-                <div class="partie">
-                    <div>
-                        <h2 id="titre">{{myTitle}}</h2>
-                        <img id="img" :src="myImg">
-                        <transition name="cards">
-                            <p v-show="!cards" class="description">{{myDescription}}</p>
-                        </transition>
-                    </div>
-                <div>
-                    <button @click="cards =! cards">Cliquer !!!</button>
+let cards = {
+    template: `
+<div>
+    <div class="partie">
+        <div>
+            <h2 class="titre">{{title}}</h2>
+            <img id="img" :src="img">
+            <transition name="cards">
+            <div v-show="!cards">
+                <p>Prix: {{prixht}} €</p>
+                <p>Quantité: {{quantite}}</p>
+                <p>Date de sortie: {{date_de_parution}}</p>
                 </div>
-            </div>  `,
-
+            </transition>
+        </div>
+    </div>
+    <div>
+        <button @click="cards =! cards">Cliquer !!!</button>
+    </div>
+</div>  `,
     data: function () {
         return ({
             cards: false,
         })
     },
-    props: ['myImg', 'myTitle', 'myDescription']
+    props: ['img', 'title', 'myDescription', 'prixht', 'quantite', 'date_de_parution']
+};
+
+
+
+
+const accueil = {
+    template: `<div></div>`
+};
+
+
+const boutique = {
+    template: `
+    <div >
+   <div >
+        <cards v-for="stocks in stock" class="cards" :img="stocks.image" :title="stocks.titre" :prixht="stocks.prixht" :quantite="stocks.quantite" :date_de_parution="stocks.date_de_parution">
+        </cards > 
+    </div>
+    </div >`,
+    data: function () {
+        return ({
+            cards: true,
+            stock: [
+                { id: "01", titre: "Lardon", prixht: "10", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+                { id: "02", titre: "Mardon", prixht: "10", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+                { id: "03", titre: "Pardon", prixht: "10", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+                { id: "04", titre: "Tardon", prixht: "10", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+                { id: "05", titre: "Sardon", prixht: "10", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+                { id: "06", titre: "Qardon", prixht: "10", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+                { id: "07", titre: "Vardon", prixht: "10", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+                { id: "08", titre: "Wardon", prixht: "10", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+                { id: "09", titre: "Xardon", prixht: "10", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+                { id: "10", titre: "Zardon", prixht: "10", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+                { id: "11", titre: "Saumon", prixht: "15", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+                { id: "12", titre: "Taumon", prixht: "15", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+                { id: "13", titre: "lardon", prixht: "15", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+                { id: "14", titre: "lardon", prixht: "15", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+                { id: "15", titre: "lardon", prixht: "15", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+                { id: "16", titre: "lardon", prixht: "15", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+                { id: "17", titre: "lardon", prixht: "15", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+                { id: "18", titre: "lardon", prixht: "15", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+                { id: "19", titre: "lardon", prixht: "15", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+                { id: "20", titre: "lardon", prixht: "15", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+                { id: "21", titre: "lardon", prixht: "15", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+                { id: "22", titre: "lardon", prixht: "23.99", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+                { id: "23", titre: "lardon", prixht: "23.99", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+                { id: "24", titre: "lardon", prixht: "23.99", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+                { id: "25", titre: "lardon", prixht: "23.99", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+                { id: "26", titre: "lardon", prixht: "23.99", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+                { id: "27", titre: "lardon", prixht: "23.99", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+                { id: "28", titre: "lardon", prixht: "23.99", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+                { id: "29", titre: "lardon", prixht: "23.99", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+                { id: "30", titre: "lardon", prixht: "23.99", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+
+            ],
+        })
+
+    },
+    components: {
+        cards,
+    }
 };
 const livre_or = {
     template: `
@@ -115,6 +177,7 @@ var routes = [{
 const router = new VueRouter({
     routes: routes
 });
+
 
 
 
