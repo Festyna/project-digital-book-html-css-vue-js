@@ -11,10 +11,9 @@
 <body>
     <div id="app">
 
-
-        <input v-model="pseudo">
-        <input v-model="date">
-        <input v-model="message">
+        <input v-model="date" placeholder="Entrez la date">
+        <input v-model="pseudo" placeholder="Entrez votre pseudo">
+        <input v-model="message" placeholder="Entrez votre message">
 
         <button v-on:click="addTodo">Envoyer</button>
         <div v-for="livre_or in todos">
