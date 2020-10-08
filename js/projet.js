@@ -8,7 +8,30 @@ const livre_or = {
     template: `<div></div>`
 };
 const formulaire_contact = {
-    template: `<div></div>`
+    template: `
+                <div> 
+                    <div id="app">
+                        <form v-if='disparaitre'>
+
+                            <div>
+                                <p>NOM</p>
+                                <input>
+                                <p>PRENOM</p>
+                                <input>
+                                <p>MAIL</p>
+                                <input>
+                                <p>Message</p>
+                                <input>
+                            </div>
+
+                            <button @click="">Envoyer</button>
+
+                        </form>
+                        <div v-else="" class="popup">
+                            lol
+                        </div>
+                    </div>
+            </div>`
 };
 
 var routes = [{
@@ -39,6 +62,7 @@ const router = new VueRouter({
 
 var vm = new Vue({
     el: "#app",
+    router: router,
     data: {
         disparaitre: true,
         message: false,
@@ -47,7 +71,7 @@ var vm = new Vue({
         message: "",
 
 
-        router: router,
+
         todos: [{
             pseudo: "Steven",
             date: "05/10/2020",
