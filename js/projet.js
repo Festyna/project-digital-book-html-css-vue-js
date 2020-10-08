@@ -1,5 +1,5 @@
 let cards = {
-    template: `
+  template: `
 <div>
     <div class="partie">
         <div>
@@ -18,12 +18,12 @@ let cards = {
         <button @click="cards =! cards">Cliquer !!!</button>
     </div>
 </div>  `,
-    data: function () {
-        return ({
-            cards: false,
-        })
-    },
-    props: ['img', 'title', 'myDescription', 'prixht', 'quantite', 'date_de_parution']
+  data: function () {
+    return ({
+      cards: false,
+    })
+  },
+  props: ['img', 'title', 'myDescription', 'prixht', 'quantite', 'date_de_parution']
 };
 
 
@@ -35,108 +35,297 @@ const accueil = {
 
 
 const boutique = {
-<<<<<<< HEAD
-  template: `<div></div>`,
-};
-const livre_or = {
-  template: `    <div>
-            <div id="app">
-                <form>
-                <input v-model="date" placeholder="Entrez la date">
-                <input v-model="pseudo" placeholder="Entrez votre pseudo">
-                <input v-model="message" placeholder="Entrez votre message">
-
-                    <button type="submit" v-on:click="addCom">Envoyer</button>
-                    <div v-for="livre_or in commentaire">
-                        <h1>Le {{livre_or.date}} {{livre_or.pseudo}} a écrit : {{livre_or.message}}</h1>
-                    </div>
-                </form>
-            </div>
-            </div>`,
-
-  data: function () {
-    return {
-      commentaire: [
-        {
-          pseudo: "Steven",
-          date: "05/10/2020",
-          message: "Trop cool ce site, un plaisir !!!",
-          completed: false,
-        },
-      ],
-    };
-  },
-
-  methods: {
-    addTodo() {
-      this.todos.push({
-        pseudo: this.pseudo,
-        completed: false,
-        date: this.date,
-        message: this.message,
-      });
-    },
-  },
-};
-
-const formulaire_contact = {
   template: `
-                <div> 
-                
-            </div>`,
-=======
-    template: `
     <div >
    <div >
         <cards v-for="stocks in stock" class="cards" :img="stocks.image" :title="stocks.titre" :prixht="stocks.prixht" :quantite="stocks.quantite" :date_de_parution="stocks.date_de_parution">
         </cards > 
     </div>
     </div >`,
-    data: function () {
-        return ({
-            cards: true,
-            stock: [
-                { id: "01", titre: "Lardon", prixht: "10", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
-                { id: "02", titre: "Mardon", prixht: "10", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
-                { id: "03", titre: "Pardon", prixht: "10", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
-                { id: "04", titre: "Tardon", prixht: "10", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
-                { id: "05", titre: "Sardon", prixht: "10", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
-                { id: "06", titre: "Qardon", prixht: "10", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
-                { id: "07", titre: "Vardon", prixht: "10", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
-                { id: "08", titre: "Wardon", prixht: "10", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
-                { id: "09", titre: "Xardon", prixht: "10", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
-                { id: "10", titre: "Zardon", prixht: "10", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
-                { id: "11", titre: "Saumon", prixht: "15", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
-                { id: "12", titre: "Taumon", prixht: "15", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
-                { id: "13", titre: "lardon", prixht: "15", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
-                { id: "14", titre: "lardon", prixht: "15", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
-                { id: "15", titre: "lardon", prixht: "15", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
-                { id: "16", titre: "lardon", prixht: "15", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
-                { id: "17", titre: "lardon", prixht: "15", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
-                { id: "18", titre: "lardon", prixht: "15", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
-                { id: "19", titre: "lardon", prixht: "15", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
-                { id: "20", titre: "lardon", prixht: "15", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
-                { id: "21", titre: "lardon", prixht: "15", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
-                { id: "22", titre: "lardon", prixht: "23.99", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
-                { id: "23", titre: "lardon", prixht: "23.99", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
-                { id: "24", titre: "lardon", prixht: "23.99", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
-                { id: "25", titre: "lardon", prixht: "23.99", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
-                { id: "26", titre: "lardon", prixht: "23.99", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
-                { id: "27", titre: "lardon", prixht: "23.99", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
-                { id: "28", titre: "lardon", prixht: "23.99", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
-                { id: "29", titre: "lardon", prixht: "23.99", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
-                { id: "30", titre: "lardon", prixht: "23.99", quantite: "5", image: "./assets/images/vue.jpg", date_de_parution: "07/10/2020", catégorie: "Porc" },
+  data: function () {
+    return ({
+      cards: true,
+      stock: [{
+          id: "01",
+          titre: "C'est arrivé la nuit",
+          prixht: "10",
+          quantite: "5",
+          image: "./assets/images/livre1.jpg",
+          date_de_parution: "07/08/2020",
+          catégorie: "Roman"
+        },
+        {
+          id: "02",
+          titre: "Le crepuscule et l'aube",
+          prixht: "8",
+          quantite: "3",
+          image: "./assets/images/livre2.jpg",
+          date_de_parution: "12/04/2020",
+          catégorie: "Fantastique"
+        },
+        {
+          id: "03",
+          titre: "La vie est un roman",
+          prixht: "14",
+          quantite: "12",
+          image: "./assets/images/livre3.jpg",
+          date_de_parution: "21/12/2020",
+          catégorie: "Roman"
+        },
+        {
+          id: "04",
+          titre: "Quelqu'un de bien",
+          prixht: "9",
+          quantite: "7",
+          image: "./assets/images/livre4.jpg",
+          date_de_parution: "14/10/2020",
+          catégorie: "Roman"
+        },
+        {
+          id: "05",
+          titre: "La vie mensongere des adultes",
+          prixht: "13",
+          quantite: "13",
+          image: "./assets/images/livre5.jpg",
+          date_de_parution: "17/06/2020",
+          catégorie: "Amour"
+        },
+        {
+          id: "06",
+          titre: "Nos resiliences",
+          prixht: "13",
+          quantite: "10",
+          image: "./assets/images/livre6.jpg",
+          date_de_parution: "21/09/2020",
+          catégorie: "Amour"
+        },
+        {
+          id: "07",
+          titre: "Ete anglais",
+          prixht: "8",
+          quantite: "5",
+          image: "./assets/images/livre7.jpg",
+          date_de_parution: "19/02/2020",
+          catégorie: "Roman"
+        },
+        {
+          id: "08",
+          titre: "Frangines",
+          prixht: "12",
+          quantite: "15",
+          image: "./assets/images/livre8.jpg",
+          date_de_parution: "16/07/2020",
+          catégorie: "Roman"
+        },
+        {
+          id: "09",
+          titre: "La commode aux tiroirs de couleurs",
+          prixht: "21",
+          quantite: "20",
+          image: "./assets/images/livre9.jpg",
+          date_de_parution: "14/12/2020",
+          catégorie: "Roman"
+        },
+        {
+          id: "10",
+          titre: "Née sous une bonne étoile",
+          prixht: "17",
+          quantite: "10",
+          image: "./assets/images/livre10.jpg",
+          date_de_parution: "12/02/2020",
+          catégorie: "Roman"
+        },
+        {
+          id: "11",
+          titre: "L'énigme de la chambre 622",
+          prixht: "21",
+          quantite: "10",
+          image: "./assets/images/livre11.jpg",
+          date_de_parution: "17/12/2020",
+          catégorie: "Roman"
+        },
+        {
+          id: "12",
+          titre: "La ou chantent les ecrevisses",
+          prixht: "15",
+          quantite: "20",
+          image: "./assets/images/livre12.jpg",
+          date_de_parution: "24/08/2020",
+          catégorie: "Amour"
+        },
+        {
+          id: "13",
+          titre: "Le bal des folles",
+          prixht: "28",
+          quantite: "30",
+          image: "./assets/images/livre13.jpg",
+          date_de_parution: "07/10/2020",
+          catégorie: "Roman"
+        },
+        {
+          id: "14",
+          titre: "Stars",
+          prixht: "11",
+          quantite: "10",
+          image: "./assets/images/livre14.jpg",
+          date_de_parution: "18/10/2020",
+          catégorie: "Amour"
+        },
+        {
+          id: "15",
+          titre: "Une chance sur un milliard",
+          prixht: "21",
+          quantite: "20",
+          image: "./assets/images/livre15.jpg",
+          date_de_parution: "16/03/2020",
+          catégorie: "Amour"
+        },
+        {
+          id: "16",
+          titre: "Crénom baudelaire",
+          prixht: "24",
+          quantite: "20",
+          image: "./assets/images/livre16.jpg",
+          date_de_parution: "21/10/2020",
+          catégorie: "Roman"
+        },
+        {
+          id: "17",
+          titre: "Impact",
+          prixht: "27",
+          quantite: "25",
+          image: "./assets/images/livre17.jpg",
+          date_de_parution: "21/09/2020",
+          catégorie: "Roman"
+        },
+        {
+          id: "18",
+          titre: "L'inconnu de la foret",
+          prixht: "17",
+          quantite: "10",
+          image: "./assets/images/livre18.jpg",
+          date_de_parution: "18/06/2020",
+          catégorie: "Roman"
+        },
+        {
+          id: "19",
+          titre: "L'illusion",
+          prixht: "16",
+          quantite: "10",
+          image: "./assets/images/livre19.jpg",
+          date_de_parution: "24/02/2020",
+          catégorie: "Fantastique"
+        },
+        {
+          id: "20",
+          titre: "Incendie nocturne",
+          prixht: "24",
+          quantite: "20",
+          image: "./assets/images/livre20.jpg",
+          date_de_parution: "18/11/2020",
+          catégorie: "Roman"
+        },
+        {
+          id: "21",
+          titre: "Eugène et moi",
+          prixht: "19",
+          quantite: "10",
+          image: "./assets/images/livre21.jpg",
+          date_de_parution: "14/12/2020",
+          catégorie: "Roman"
+        },
+        {
+          id: "22",
+          titre: "Des ailes d'argent",
+          prixht: "23",
+          quantite: "10",
+          image: "./assets/images/livre22.jpg",
+          date_de_parution: "09/05/2020",
+          catégorie: "Amour"
+        },
+        {
+          id: "23",
+          titre: "Le cri du moloch",
+          prixht: "20",
+          quantite: "15",
+          image: "./assets/images/livre23.jpg",
+          date_de_parution: "27/09/2020",
+          catégorie: "Fantastique"
+        },
+        {
+          id: "24",
+          titre: "L'oracle de gé",
+          prixht: "19",
+          quantite: "20",
+          image: "./assets/images/livre24.jpg",
+          date_de_parution: "13/11/2020",
+          catégorie: "Fantastique"
+        },
+        {
+          id: "25",
+          titre: "Chere mamie",
+          prixht: "28",
+          quantite: "35",
+          image: "./assets/images/livre25.jpg",
+          date_de_parution: "11/11/2020",
+          catégorie: "Roman"
+        },
+        {
+          id: "26",
+          titre: "The Witcher",
+          prixht: "30",
+          quantite: "40",
+          image: "./assets/images/livre26.jpg",
+          date_de_parution: "24/12/2020",
+          catégorie: "Fantastique"
+        },
+        {
+          id: "27",
+          titre: "L'affaire charles dexter ward",
+          prixht: "28",
+          quantite: "25",
+          image: "./assets/images/livre27.jpg",
+          date_de_parution: "15/06/2020",
+          catégorie: "Roman"
+        },
+        {
+          id: "28",
+          titre: "Cendrillon",
+          prixht: "27",
+          quantite: "20",
+          image: "./assets/images/livre28.jpg",
+          date_de_parution: "09/07/2020",
+          catégorie: "Amour"
+        },
+        {
+          id: "29",
+          titre: "Demon slayer",
+          prixht: "27",
+          quantite: "20",
+          image: "./assets/images/livre29.jpg",
+          date_de_parution: "13/07/2020",
+          catégorie: "Fantastique"
+        },
+        {
+          id: "30",
+          titre: "La belle et la bete",
+          prixht: "30",
+          quantite: "25",
+          image: "./assets/images/livre30.jpg",
+          date_de_parution: "12/10/2020",
+          catégorie: "Amour"
+        },
 
-            ],
-        })
+      ],
+    })
 
-    },
-    components: {
-        cards,
-    }
+  },
+  components: {
+    cards,
+  }
 };
 const livre_or = {
-    template: `
+  template: `
     <div>
         <div id="app">
             <form>
@@ -152,29 +341,34 @@ const livre_or = {
         </div>
     </div>`,
 
-    data: function () {
-        return ({
+  data: function () {
+    return ({
 
-            pseudo: "",
-            date: "",
-            message: "",
-            completed: false,
-            commentaire: [{
-                pseudo: "Steven",
-                date: "05/10/2020",
-                message: "Trop cool ce site, un plaisir !!!",
-            }],
-        })
+      pseudo: "",
+      date: "",
+      message: "",
+      completed: false,
+      commentaire: [{
+        pseudo: "Steven",
+        date: "05/10/2020",
+        message: "Trop cool ce site, un plaisir !!!",
+      }],
+    })
+  },
+  methods: {
+    addCom() {
+      this.commentaire.push({
+        pseudo: this.pseudo,
+        completed: false,
+        date: this.date,
+        message: this.message,
+      });
     },
-    methods: {
-        addCom() {
-            this.commentaire.push({ pseudo: this.pseudo, completed: false, date: this.date, message: this.message, });
-        },
-    },
+  },
 };
 
 const formulaire_contact = {
-    template: `
+  template: `
         <div id="app">
             <form v-if='disparaitre'>
 
@@ -196,18 +390,16 @@ const formulaire_contact = {
                 lol
             </div>
         </div>`,
-    data: function () {
-        return ({
-            disparaitre: true,
-            message: false,
-        })
-    }
+  data: function () {
+    return ({
+      disparaitre: true,
+      message: false,
+    })
+  }
 
->>>>>>> 0ec8ea0e9054393bdfa00bb48f7c98bc48534e51
 };
 
-var routes = [
-  {
+var routes = [{
     path: "/accueil",
     component: accueil,
   },
@@ -229,88 +421,48 @@ const router = new VueRouter({
   routes: routes,
 });
 
-<<<<<<< HEAD
+
+
+
+
 var vm = new Vue({
   el: "#app",
-
+  router: router,
   data: {
-    disparaitre: true,
-    message: false,
+
     pseudo: "",
     date: "",
     message: "",
-    errors: [],
-    name: null,
-    email: null,
-    movie: null,
+    disparaitre: true,
+    message: false,
 
-    todos: [
-      {
-        pseudo: "Steven",
-        date: "05/10/2020",
-        message: "Trop cool ce site, un plaisir !!!",
-        completed: false,
-      },
-    ],
+
+    todos: [{
+      pseudo: "Steven",
+      date: "05/10/2020",
+      message: "Trop cool ce site, un plaisir !!!",
+      completed: false,
+    }],
+  },
+  checkForm: function (e) {
+    this.errors = [];
+
+    if (!this.name) {
+      this.errors.push("Name required.");
+    }
+    if (!this.email) {
+      this.errors.push("Email required.");
+    } else if (!this.validEmail(this.email)) {
+      this.errors.push("Valid email required.");
+    }
+
+    if (!this.errors.length) {
+      return true;
+    }
+
+    e.preventDefault();
   },
 
-  router: router,
-
-  methods: {
-    addTodo() {
-      this.todos.push({
-        pseudo: this.pseudo,
-        completed: false,
-        date: this.date,
-        message: this.message,
-      });
-=======
 
 
-
-
-var vm = new Vue({
-    el: "#app",
-    router: router,
-    data: {
-
-        pseudo: "",
-        date: "",
-        message: "",
-        disparaitre: true,
-        message: false,
-
-
-        todos: [{
-            pseudo: "Steven",
-            date: "05/10/2020",
-            message: "Trop cool ce site, un plaisir !!!",
-            completed: false,
-        }],
->>>>>>> 0ec8ea0e9054393bdfa00bb48f7c98bc48534e51
-    },
-    checkForm: function (e) {
-      this.errors = [];
-
-      if (!this.name) {
-        this.errors.push("Name required.");
-      }
-      if (!this.email) {
-        this.errors.push("Email required.");
-      } else if (!this.validEmail(this.email)) {
-        this.errors.push("Valid email required.");
-      }
-
-      if (!this.errors.length) {
-        return true;
-      }
-
-      e.preventDefault();
-    },
-    validEmail: function (email) {
-      var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return re.test(email);
-    },
-  },
-  computed: {},
 });
