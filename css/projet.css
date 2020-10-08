@@ -1,6 +1,78 @@
+<<<<<<< HEAD
 .popup {
     border: 4px solid green;
     font-size: 75px;
     width: 250px;
     text-align: center;
 }
+=======
+.popup{
+    border:4px solid green;
+    font-size:75px;
+    width:250px;
+    text-align:center;
+}
+
+/*cards*/
+
+.description {
+    color: black;
+
+  }
+
+  .cards-enter-active,
+  .cards-leave-active {
+    transition: opacity 1.5s;
+    color: red;
+  }
+
+  .cards-enter,
+  .cards-leave-to {
+    opacity: 0;
+    color: blue;
+  }
+
+  .shows-enter-active,
+  .shows-leave-active {
+    transition: opacity 1.5s;
+    color: yellow;
+  }
+
+  .shows-enter,
+  .shows-leave-to {
+    opacity: 0;
+    color: green;
+  }
+
+
+  .alignement {
+    width:50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .cards {
+    margin: 25px;
+  }
+
+  .partie {
+    width: 250px;
+    border: 1px black solid;
+  }
+
+  .titre {
+    
+    color: white;
+    background-color: rgb(75, 0, 0);
+  }
+
+  img {
+    height: 200px;
+    width: auto;
+
+  }
+
+  /*cards*/
+>>>>>>> 0ec8ea0e9054393bdfa00bb48f7c98bc48534e51

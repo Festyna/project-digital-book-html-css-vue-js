@@ -15,24 +15,31 @@
 
     <!--FIN Navbar-->
     <div id="app">
-        <form v-if='disparaitre'>
+        <router-link to="/accueil">Accueil</router-link>
+        <router-link to="/boutique">Boutique</router-link>
+        <router-link to="/livre-or">Livre d'or</router-link>
+        <router-link to="/formulaire">Formulaire de contact</router-link>
 
-            <div>
-                <p>NOM</p>
-                <input>
-                <p>PRENOM</p>
-                <input>
-                <p>MAIL</p>
-                <input>
-                <p>Message</p>
-                <input>
-            </div>
+        <h1 class="alignement">Y'a tout qui marche Perlotte !</h1>
+        <div class="alignement">
 
-            <button type="submit" @click="disparaitre=!disparaitre">Envoyer</button>
-
-        </form>
-        <div v-else="message" class="popup">lol</div>
+            <card class="cards" my-img="./assets/images/vue.jpg" my-title="Saperlotte"
+                my-description="Il était une fois la saperlipopette">
+            </card>
+            <card class="cards" my-img="./assets/images/elfenlied.jpg" my-title="Elfen Lied"
+                my-description="Best MANGA EVER"></card>
+        </div>
     </div>
+
+
+
+    <div>
+        <router-view>
+        </router-view>
+    </div>
+    </div>
+
+
 
     <!--Footer-->
     <!--FIN Footer-->
