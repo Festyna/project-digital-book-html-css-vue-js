@@ -4,3 +4,64 @@
     width:250px;
     text-align:center;
 }
+
+/*cards*/
+
+.description {
+    color: black;
+
+  }
+
+  .cards-enter-active,
+  .cards-leave-active {
+    transition: opacity 1.5s;
+    color: red;
+  }
+
+  .cards-enter,
+  .cards-leave-to {
+    opacity: 0;
+    color: blue;
+  }
+
+  .shows-enter-active,
+  .shows-leave-active {
+    transition: opacity 1.5s;
+    color: yellow;
+  }
+
+  .shows-enter,
+  .shows-leave-to {
+    opacity: 0;
+    color: green;
+  }
+
+
+  .alignement {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .cards {
+    margin: 25px;
+  }
+
+  .partie {
+    width: 300px;
+    border: 1px black solid;
+  }
+
+  #titre {
+    color: white;
+    background-color: rgb(75, 0, 0);
+  }
+
+  img {
+    height: 200px;
+    width: auto;
+
+  }
+
+  /*cards*/
