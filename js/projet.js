@@ -55,6 +55,7 @@ var vm = new Vue({
             completed: false,
         }],
     },
+    router: router,
 
 
     methods: {
