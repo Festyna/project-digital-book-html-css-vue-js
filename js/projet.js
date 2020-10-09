@@ -1,6 +1,6 @@
 let cards = {
   template: `
-<div>
+  <div>
         <div class="partie">
             <div>
                   <h2 class="titre">{{title}}</h2>
@@ -18,7 +18,7 @@ let cards = {
                   <button @click="cards =! cards">Cliquer !!!</button>
               </div>
       
-</div>  `,
+  </div>`,
   data: function () {
     return {
       cards: false,

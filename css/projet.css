@@ -78,7 +78,7 @@ img {
 }
 
 .cd_background {
-  background-image: url(/assets/narrative-794978_1920.jpg);
+  background-image: url("/assets/narrative-794978_1920.jpg");
   background-size: cover;
 }
 
@@ -363,6 +363,7 @@ footer {
 .section-title {
   text-align: center;
   width: 800px;
+  margin-top: 4%;
 
 }
 

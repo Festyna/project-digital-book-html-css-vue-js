@@ -14,26 +14,39 @@
     <!--Navbar-->
 
     <!--FIN Navbar-->
-    <div id="app">
-        <form v-if='disparaitre'>
 
-            <div>
-                <p>NOM</p>
-                <input>
-                <p>PRENOM</p>
-                <input>
-                <p>MAIL</p>
-                <input>
-                <p>Message</p>
-                <input>
-            </div>
 
-            <button type="submit" @click="disparaitre=!disparaitre">Envoyer</button>
+    <form id="app" v-if="disparaitre" @submit="checkForm" action="/something" method="post" novalidate="true">
 
-        </form>
-        <div v-else="message" class="popup">lol</div>
-    </div>
+        <p v-if="errors.length">
+            <b>Please correct the following error(s):</b>
+        <ul>
+            <li v-for="error in errors">{{ error }}</li>
+        </ul>
+        </p>
 
+        <p>
+            <label for="name">Name<label>
+                    <input type="text" name="name" id="name" v-model="name">
+        </p>
+
+        <p>
+            <label for="email">Email<label>
+                    <input type="email" name="email" id="email" v-model="email">
+        </p>
+
+
+
+        <!-- <p>
+            <input type="submit" value="Submit">
+        </p> -->
+        <p>
+            <input type="submit" value="Submit" @click="disparaitre=!disparaitre"></input>
+        </p>
+
+        <div v-else="alert" class="popup">lol</div>
+
+    </form>
     <!--Footer-->
     <!--FIN Footer-->
 
