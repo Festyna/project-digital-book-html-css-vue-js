@@ -1,78 +1,662 @@
-<<<<<<< HEAD
-.popup {
-    border: 4px solid green;
-    font-size: 75px;
-    width: 250px;
-    text-align: center;
-}
-=======
-.popup{
-    border:4px solid green;
-    font-size:75px;
-    width:250px;
-    text-align:center;
+/* .popup {
+  border: 4px solid green;
+  font-size: 75px;
+  width: 250px;
+  text-align: center;
 }
 
 /*cards*/
 
-.description {
-    color: black;
+/* .description {
+  color: black;
 
+}
+
+.cards-enter-active,
+.cards-leave-active {
+  transition: opacity 1.5s;
+  color: red;
+}
+
+.cards-enter,
+.cards-leave-to {
+  opacity: 0;
+  color: blue;
+}
+
+.shows-enter-active,
+.shows-leave-active {
+  transition: opacity 1.5s;
+  color: yellow;
+}
+
+.shows-enter,
+.shows-leave-to {
+  opacity: 0;
+  color: green;
+}
+
+
+.alignement {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.cards {
+  margin: 25px;
+}
+
+.partie {
+  width: 250px;
+  border: 1px black solid;
+}
+
+.titre {
+
+  color: white;
+  background-color: rgb(75, 0, 0);
+}
+
+img {
+  height: 200px;
+  width: auto;
+
+} */
+*/
+/*cards*/
+
+/* Partie Steeven */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+}
+
+.cd_background {
+  background-image: url(/assets/narrative-794978_1920.jpg);
+  background-size: cover;
+}
+
+/* body {
+  background-image: url(/assets/narrative-794978_1920.jpg);
+  background-size: cover;
+  background-position: center center;
+  font-family: sans-serif;
+ } */
+
+
+.menu-bar {
+  background-color: rgba(125, 84, 56, 0.906);
+  text-align: center;
+}
+
+.menu-bar ul {
+  display: inline-flex;
+  list-style: none;
+  color: #fff;
+}
+
+.menu-bar ul li {
+  width: 120px;
+  margin: 15px;
+  padding: 15px;
+}
+
+.menu-bar ul li a {
+  text-decoration: none;
+  color: #fff
+}
+
+.active,
+.menu-bar ul li:hover {
+  background-color: rgb(232, 216, 156);
+  border-radius: 3px;
+
+}
+
+.menu-bar .fa {
+  margin-right: 8px;
+}
+
+.sub-menu-1 {
+  display: none;
+}
+
+.menu-bar ul li:hover .sub-menu-1 {
+  display: block;
+  position: absolute;
+  background: rgb(232, 216, 156);
+  margin-top: 15px;
+  margin-left: -15px;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul {
+  display: block;
+  margin: 10px;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul li {
+  width: 150px;
+  padding: 10px;
+  border-bottom: 1px dotted #fff;
+  background: transparent;
+  border-radius: 0;
+  text-align: left;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul li:last-child {
+  border-bottom: none;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul li a:hover {
+  color: rgba(232, 15, 0, 0.5);
+}
+
+bi-stickies-angle-right {
+  float: right;
+}
+
+.logo {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 87px;
+  z-index: 100;
+
+}
+
+
+
+/* 3D Slideshow */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: #6adecd;
+} */
+
+#slideshow {
+  margin: 0 auto;
+  top: 50%;
+  height: 600px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.slideshow-title {
+  font-family: 'Allerta Stencil';
+  font-size: 62px;
+  color: #fff;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 25%;
+  letter-spacing: 3px;
+  font-weight: 300;
+}
+
+.sub-heading {
+  padding-top: 50px;
+  font-size: 18px;
+}
+
+.sub-heading-two {
+  font-size: 15px;
+}
+
+.sub-heading-three {
+  font-size: 13px;
+}
+
+.sub-heading-four {
+  font-size: 11px;
+}
+
+.sub-heading-five {
+  font-size: 9px;
+}
+
+.sub-heading-six {
+  font-size: 7px;
+}
+
+.sub-heading-seven {
+  font-size: 5px;
+}
+
+.sub-heading-eight {
+  font-size: 3px;
+}
+
+.sub-heading-nine {
+  font-size: 1px;
+}
+
+.entire-content {
+  margin: auto;
+  width: 190px;
+  perspective: 1000px;
+  position: relative;
+  padding-top: 80px;
+}
+
+.content-carrousel {
+  width: 100%;
+  position: absolute;
+  float: right;
+  animation: rotar 15s infinite linear;
+  transform-style: preserve-3d;
+}
+
+.content-carrousel:hover {
+  animation-play-state: paused;
+  cursor: pointer;
+}
+
+.content-carrousel figure {
+  width: 100%;
+  height: 90px;
+  border: 3px solid;
+  border-image: linear-gradient(#cbf011, #ff3f04) 30;
+  overflow: hidden;
+  position: absolute;
+}
+
+.content-carrousel figure:nth-child(1) {
+  transform: rotateY(0deg) translateZ(300px);
+}
+
+.content-carrousel figure:nth-child(2) {
+  transform: rotateY(40deg) translateZ(300px);
+}
+
+.content-carrousel figure:nth-child(3) {
+  transform: rotateY(80deg) translateZ(300px);
+}
+
+.content-carrousel figure:nth-child(4) {
+  transform: rotateY(120deg) translateZ(300px);
+}
+
+.content-carrousel figure:nth-child(5) {
+  transform: rotateY(160deg) translateZ(300px);
+}
+
+.content-carrousel figure:nth-child(6) {
+  transform: rotateY(200deg) translateZ(300px);
+}
+
+.content-carrousel figure:nth-child(7) {
+  transform: rotateY(240deg) translateZ(300px);
+}
+
+.content-carrousel figure:nth-child(8) {
+  transform: rotateY(280deg) translateZ(300px);
+}
+
+.content-carrousel figure:nth-child(9) {
+  transform: rotateY(320deg) translateZ(300px);
+}
+
+.content-carrousel figure:nth-child(10) {
+  transform: rotateY(360deg) translateZ(300px);
+}
+
+.shadow {
+  position: absolute;
+  box-shadow: 0px 0px 20px 0px #000;
+  border-radius: 1px;
+}
+
+.content-carrousel img {
+  image-rendering: auto;
+  transition: all 300ms;
+  width: 100%;
+  height: 100%;
+}
+
+.content-carrousel img:hover {
+  transform: scale(1.2);
+  transition: all 300ms;
+}
+
+@keyframes rotar {
+  from {
+    transform: rotateY(0deg);
   }
 
-  .cards-enter-active,
-  .cards-leave-active {
-    transition: opacity 1.5s;
-    color: red;
+  to {
+    transform: rotateY(360deg);
   }
+}
 
-  .cards-enter,
-  .cards-leave-to {
-    opacity: 0;
-    color: blue;
-  }
+/*fin du carouselle 3d */
 
-  .shows-enter-active,
-  .shows-leave-active {
-    transition: opacity 1.5s;
-    color: yellow;
-  }
-
-  .shows-enter,
-  .shows-leave-to {
-    opacity: 0;
-    color: green;
-  }
+/* Pied de page navbar.html */
+footer {
+  background-color: #5c2c02;
+  /* mon care qui comprend mon texte  */
+  color: white;
+  text-align: center;
+  /* pour aligner mon texte au centre */
+  margin: 0px;
 
 
-  .alignement {
-    width:50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
+  /* nav bar footer pour regler la hauter */
+  width: 100%;
 
-  .cards {
-    margin: 25px;
-  }
 
-  .partie {
-    width: 250px;
-    border: 1px black solid;
-  }
 
-  .titre {
-    
-    color: white;
-    background-color: rgb(75, 0, 0);
-  }
+}
 
-  img {
-    height: 200px;
-    width: auto;
+.section-title {
+  text-align: center;
+  width: 800px;
 
-  }
+}
 
-  /*cards*/
->>>>>>> 0ec8ea0e9054393bdfa00bb48f7c98bc48534e51
+/* fin footer navbarnavbar.html*/
+
+
+
+
+/* page Contact.html */
+
+
+.cd_contact .section-title {
+  color: black;
+  text-align: center;
+}
+
+.cd_contact .contact-form {
+  margin: auto;
+  width: 50vw;
+}
+
+.cd_contact .contact-form label {
+  color: black;
+}
+
+.cd_contact .contact-form .text-input-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.cd_contact .contact-form input[type="text"],
+.cd_contact .contact-form input[type="email"],
+.cd_contact .contact-form textarea {
+
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 15px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.cd_contact .contact-form .submit-button {
+  width: 100px;
+  margin: 50px auto;
+  display: block;
+  border: 2px solid black;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 5px;
+  background-color: transparent;
+  color: black;
+}
+
+.cd_contact .contact-form .submit-button:hover {
+  background-color: white;
+  color: #151515;
+  cursor: pointer;
+}
+
+/* fin page contact.html*/
+
+
+
+/* Pied de page contact.html */
+.foutercontact {
+  background-color: #3a3a3a;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  margin: 0px;
+}
+
+.section-title {
+  text-align: center;
+  width: 800px;
+}
+
+/* fin de page contact.html*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*card avec effect girl */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Main Container */
+.container {
+  position: absolute;
+  /* pour que sa prens en compte mes 4 coin */
+  top: 23%;
+  /* pour placer en haut ou en bas  espacer de 23% */
+  right: 2%;
+  /* pour placer a droite espacer de 2% */
+
+}
+
+/* .profile-container:hover */
+.profile-container {
+  width: 300px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+  transition: 1s all ease;
+
+}
+
+.profile-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./assets/hninja-1.jpg') no-repeat center center/cover;
+  z-index: -1;
+  opacity: 1;
+  transition: all .5s ease-in;
+}
+
+.profile-container:hover:before {
+  opacity: 0;
+  transition: all .5s ease;
+}
+
+
+/* Profile Card Wrapper */
+.profile-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.profile-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #2371ae 0%, #bb47d4 100%);
+  transform: skew(30deg) translateX(125%);
+  opacity: 0.9;
+  transition: all 0.6s ease;
+}
+
+.profile-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #723907 0%, #c1c107 100%);
+  transform: skew(30deg) translateX(-125%);
+  opacity: 0.9;
+  transition: all 0.6s ease;
+}
+
+.profile-container:hover .profile-wrapper::after {
+  transform: skew(30deg) translateX(125%);
+  background: linear-gradient(to right, #bb47d4 0%, #2371ae 100%);
+
+}
+
+.profile-container:hover .profile-wrapper::before {
+  transform: skew(30deg) translateX(-125%);
+  background: linear-gradient(to right, #bb47d4 0%, #2371ae 100%);
+}
+
+/* Profile Card */
+.profile-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem 10px;
+  position: relative;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.profile-container:hover .profile-card {
+  opacity: 1;
+  transition: all 0.6s ease;
+  transition-delay: 0.2s;
+}
+
+.profile-card .fav-icon {
+  color: #ec0e0e;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  font-size: 21px;
+  cursor: pointer;
+}
+
+/* Profile Picture */
+.profile-card img {
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 1rem 0;
+  border: 2px solid transparent;
+  background-image: linear-gradient(white, white),
+    linear-gradient(to right, green, gold);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  /* border: 2px solid #1999; */
+  position: relative;
+}
+
+.profile-card h2 {
+  line-height: 1.2;
+  color: #222;
+}
+
+.profile-card h4 {
+  line-height: 1.5;
+  color: #444;
+}
+
+.profile-card p {
+  line-height: 1.2;
+  color: #333;
+  margin: 10px 0;
+}
+
+/* Profile Icons */
+.profile-card .icons {
+  display: flex;
+  color: #333;
+  width: 90%;
+  justify-content: space-evenly;
+  font-size: 1.4rem;
+  margin: 5px 0;
+}
+
+.profile-card .icons i:hover {
+  background-image: linear-gradient(to right, #712f07ba 0%, #a0911f 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+}
+
+/* Profile Button */
+.profile-card a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #FFFFFF;
+  padding: 8px 20px;
+  margin-top: 1rem;
+  background: #2371ae;
+  border-radius: 50px;
+  background: linear-gradient(to right, #683101 0%, #9f9f05 100%);
+  /*couleur de mon bouton */
+}
+
+/* Fin partie steeven */

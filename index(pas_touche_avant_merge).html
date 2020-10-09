@@ -4,31 +4,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <title>Digital BOOKS</title>
     <link rel="stylesheet" href="./css/projet.css">
 </head>
 
 <body>
-    <!--Navbar-->
-    <!--FIN Navbar-->
     <div id="app">
-        <router-link to="/accueil">Accueil</router-link>
-        <router-link to="/boutique">Boutique</router-link>
-        <router-link to="/livre-or">Livre d'or</router-link>
-        <router-link to="/formulaire">Formulaire de contact</router-link>
+
+        <!-- Steeven -->
+
+        <!-- NavBar -->
+
+        <div class="menu-bar">
+            <ul>
+                <img class="logo" src="./assets/removebg-preview.png" height="190" width="190" />
+
+
+
+                <li class="active"><a href="#">
+                        <img src="./assets/home.png" width="19rem">
+                        <router-link to="/accueil">Home</router-link>
+                    </a></li>
+
+
+                </li>
+
+
+                <li class="sub-menu-2"><a class='nav-link' href="#"><img src="./assets/shop.png" width="19rem">
+                        <router-link to="/boutique">Boutique</router-link>
+                    </a></li>
+
+                <li><a class='nav-link' href="#"> <img src="./assets/39752.png" width="19rem">
+                        <router-link to="/livre-or">Livre d'or</router-link>
+                    </a></li>
+
+                <li><a class='nav-link' href="#"> <img src="./assets/39831.png" width="19rem">
+                        <router-link to="/formulaire"> contact</router-link>
+                    </a></li>
+
+
+                <li><a class='nav-link' href="#"><img src="./assets/panier.png" width="19rem"> Panier</a>
+
+                    <div class="sub-menu-1">
+                        <ul>
+                            <li><a class='nav-link' href="#"> livre 34</a></li>
+                            <li class="over-me"><a class='nav-link' href="#">livre</a><i class="bi bi-angle-right"></i>
+                            </li>
+                            <div class="sub-menu-2">
+
+                                <ul>
+                                    <li class="submenu"><a class='nav-link' href="#"> achat livre</a></li>
+                                    <li class="submenu"><a class='nav-link' href="#"> livre</a></li>
+                                </ul>
+
+                            </div>
+                            <div class="sub-menu-2">
+                                <ul>
+                                    <li class="submenu"><a class='nav-link' href="#">livre 0</a></li>
+
+                                </ul>
+
+                        </ul>
+                    </div>
+
+
+                </li>
+
+            </ul>
+        </div>
+        <!-- Fin navbar -->
+
+        <!-- Fin steeven -->
 
         <div>
             <router-view>
             </router-view>
         </div>
+        <footer>
+            <p class="footer-content"> Digital Books &copy; Tous Droits Réservés
+            </p>
+        </footer>
     </div>
 
 
 
-    <!--Footer-->
-    <!--FIN Footer-->
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
