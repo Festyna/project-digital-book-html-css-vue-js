@@ -1,3 +1,5 @@
+/*cards amaury debut*/
+
 /* .popup {
   border: 4px solid green;
   font-size: 75px;
@@ -65,10 +67,10 @@ img {
   width: auto;
 
 } */
-*/
-/*cards*/
 
-/* Partie Steeven */
+/*cards amaury fin*/
+
+/* Partie Steven */
 
 * {
   padding: 0;
@@ -80,6 +82,7 @@ img {
 .cd_background {
   background-image: url("/assets/narrative-794978_1920.jpg");
   background-size: cover;
+ min-height: 100vh;
 }
 
 /* body {
