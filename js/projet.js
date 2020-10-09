@@ -1,24 +1,23 @@
 let cards = {
   template: `
 <div>
-        <div class="partie">
-            <div>
-                  <h2 class="titre">{{title}}</h2>
-                  <img id="img" :src="img">
-                  <transition name="cards">
-                  <div v-show="!cards">
-                      <p>Prix: {{prixht}} €</p>
-                      <p>Quantité: {{quantite}}</p>
-                      <p>Date de sortie: {{date_de_parution}}</p>
-                      </div>
-                  </transition>
-              </div>
-          </div>
-              <div>
-                  <button @click="cards =! cards">Cliquer !!!</button>
-              </div>
-      
-</div>  `,
+  <div class="partie">
+    <div>
+      <h2 class="titre">{{title}}</h2>
+      <img id="img" :src="img">
+      <transition name="cards">
+        <div v-show="!cards">
+          <p>Prix: {{prixht}} €</p>
+          <p>Quantité: {{quantite}}</p>
+          <p>Date de sortie: {{date_de_parution}}</p>
+        </div>
+      </transition>
+    </div>
+  </div>
+  <div>
+      <button @click="cards =! cards">Cliquer !!!</button>
+  </div>
+</div> `,
   data: function () {
     return {
       cards: false,
@@ -35,70 +34,56 @@ let cards = {
 };
 
 const accueil = {
-  template: `<div class="cd_background">
+  template: `
+<div class="cd_background">
+  <section id="slideshow">
+    <div class="entire-content">
+      <div class="content-carrousel">
+        <figure class="shadow"><img src="./assets/rose-2101475_1920.jpg"></figure>
+        <figure class="shadow"><img src="./assets/removebg-preview.png" /></figure>
+        <figure class="shadow"><img src="./assets/paper-1100254_1920.jpg" /></figure>
+        <figure class="shadow"><img src="./assets/narrative-794978_1920.jpg" /></figure>
+        <figure class="shadow"><img src="./assets/girl-3421489_1920.jpg" /></figure>
+        <figure class="shadow"><img src="./assets/book-1659717_1920.jpg" /></figure>
+        <figure class="shadow"><img src="./assets/book-419589_1920.jpg" /></figure>
+        <figure class="shadow"><img src="./assets/book-863418_1920.jpg" /></figure>
+        <figure class="shadow"><img src="./assets/book-2929646_1920.jpg" /></figure>
+      </div>
+    </div>
+  </section>
+  <div class="container">
+    <div class="profile-container">
+      <div class="profile-wrapper">
+        <div class="profile-card">
+          <div class="fav-icon">
+            <i class="far fa-heart"></i>
+          </div>
 
-                          <section id="slideshow">
-                                    <div class="entire-content">
-                                        <div class="content-carrousel">
-                                            <figure class="shadow"><img src="./assets/rose-2101475_1920.jpg"></figure>
-                                            <figure class="shadow"><img src="./assets/removebg-preview.png" /></figure>
-                                            <figure class="shadow"><img src="./assets/paper-1100254_1920.jpg" /></figure>
-                                            <figure class="shadow"><img src="./assets/narrative-794978_1920.jpg" /></figure>
-                                            <figure class="shadow"><img src="./assets/girl-3421489_1920.jpg" /></figure>
-                                            <figure class="shadow"><img src="./assets/book-1659717_1920.jpg" /></figure>
-                                            <figure class="shadow"><img src="./assets/book-419589_1920.jpg" /></figure>
-                                            <figure class="shadow"><img src="./assets/book-863418_1920.jpg" /></figure>
-                                            <figure class="shadow"><img src="./assets/book-2929646_1920.jpg" /></figure>
-                                        </div>
-                                    </div>
+          Profile-Picture
+          <img src="./assets/hninja-1.jpg" alt="profile pics">
+          <h2>Gabriella Moreira</h2>
+          <h4>Lead Developer</h4>
+          <p>Lorem ipsum dolor sit amet conse adipisicing elit. Odit omnis odio tenetur eveniet soluta
+          numquam
+          deleniti sequi dolore nostrum sit.</p>
 
-
-                                    <div>
-
-
-                            </section>
-
-        <div class="container">
-
-            <div class="profile-container">
-
-                <div class="profile-wrapper">
-
-                    <div class="profile-card">
-                        <div class="fav-icon">
-                            <i class="far fa-heart"></i>
-                        </div>
-
-                        Profile-Picture
-                        <img src="./assets/hninja-1.jpg" alt="profile pics">
-
-                        <h2>Gabriella Moreira</h2>
-                        <h4>Lead Developer</h4>
-
-                        <p>Lorem ipsum dolor sit amet conse adipisicing elit. Odit omnis odio tenetur eveniet soluta
-                            numquam
-                            deleniti sequi dolore nostrum sit.</p>
-
-                        Social Icons
-                        <div class="icons">
-                            <i class=>
-                                <!--<img src= "#" >--> </i>
-                            <i class="fab fa-twitter"></i>
-                            <i class="fab fa-instagram"></i>
-                            <i class="fab fa-behance"></i>
-                            <i class="fab fa-linkedin-in"></i>
-                        </div>
-
-                        Profile Button
-                        <a href="#">View Profile</a>
-
-                    </div>
-
-                </div>
-
+          Social Icons
+            <div class="icons">
+              <i class=>
+              <i class="fab fa-twitter"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-behance"></i>
+              <i class="fab fa-linkedin-in"></i>
             </div>
+
+          Profile Button
+          <a href="#">View Profile</a>
+
         </div>
-  </div>`,
+      </div>
+    </div>
+  </div>
+</div>`,
 };
 
 const boutique = {
