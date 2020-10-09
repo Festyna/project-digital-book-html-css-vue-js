@@ -81,8 +81,8 @@ img {
 
 .cd_background {
   background-image: url("/assets/narrative-794978_1920.jpg");
-  background-size: cover;
- min-height: 100vh;
+  background-size: fixed;
+ min-height: 115vh;
 }
 
 /* body {
@@ -348,15 +348,10 @@ body {
 
 /* Pied de page navbar.html */
 footer {
-  background-color: #5c2c02;
-  /* mon care qui comprend mon texte  */
+  background-color:rgba(125, 84, 56, 0.906) ;/* mon care qui comprend mon texte  */
   color: white;
-  text-align: center;
-  /* pour aligner mon texte au centre */
-  margin: 0px;
-
-
-  /* nav bar footer pour regler la hauter */
+  text-align: center;/* pour aligner mon texte au centre */
+  margin: 0px;/* nav bar footer pour regler la hauter */
   width: 100%;
 
 

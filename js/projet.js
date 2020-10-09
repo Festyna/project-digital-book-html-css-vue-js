@@ -59,25 +59,16 @@ const accueil = {
             <i class="far fa-heart"></i>
           </div>
 
-          Profile-Picture
           <img src="./assets/hninja-1.jpg" alt="profile pics">
-          <h2>Gabriella Moreira</h2>
-          <h4>Lead Developer</h4>
-          <p>Lorem ipsum dolor sit amet conse adipisicing elit. Odit omnis odio tenetur eveniet soluta
-          numquam
-          deleniti sequi dolore nostrum sit.</p>
+          <h2>Michael Monfort</h2>
+          <h4>Le Ninja qui te defonce si tu paye pas ton livre 
+          🐙 "Roberto, mio palmo."
+          🍼 Papa x 2
+          </h4>
+          <p>Parmi le vaste choix de genre littéraire qui existent, les romans font partie des plus importants et des genres les plus lus.  </p>
 
-          Social Icons
-            <div class="icons">
-              <i class=>
-              <i class="fab fa-twitter"></i>
-              <i class="fab fa-instagram"></i>
-              <i class="fab fa-behance"></i>
-              <i class="fab fa-linkedin-in"></i>
-            </div>
-
-          Profile Button
-          <a href="#">View Profile</a>
+         
+          <a href="https://www.instagram.com/michael.monfort/?hl=fr">View Profile</a>
 
         </div>
       </div>
