@@ -19,20 +19,23 @@ let cards = {
     </div>
 </div>  `,
   data: function () {
-    return ({
+    return {
       cards: false,
-    })
+    };
   },
-  props: ['img', 'title', 'myDescription', 'prixht', 'quantite', 'date_de_parution']
+  props: [
+    "img",
+    "title",
+    "myDescription",
+    "prixht",
+    "quantite",
+    "date_de_parution",
+  ],
 };
-
-
-
 
 const accueil = {
   template: `<div></div>`,
 };
-
 
 const boutique = {
   template: `
@@ -43,16 +46,17 @@ const boutique = {
     </div>
     </div >`,
   data: function () {
-    return ({
+    return {
       cards: true,
-      stock: [{
+      stock: [
+        {
           id: "01",
           titre: "C'est arrivé la nuit",
           prixht: "10",
           quantite: "5",
           image: "./assets/images/livre1.jpg",
           date_de_parution: "07/08/2020",
-          catégorie: "Roman"
+          catégorie: "Roman",
         },
         {
           id: "02",
@@ -61,7 +65,7 @@ const boutique = {
           quantite: "3",
           image: "./assets/images/livre2.jpg",
           date_de_parution: "12/04/2020",
-          catégorie: "Fantastique"
+          catégorie: "Fantastique",
         },
         {
           id: "03",
@@ -70,7 +74,7 @@ const boutique = {
           quantite: "12",
           image: "./assets/images/livre3.jpg",
           date_de_parution: "21/12/2020",
-          catégorie: "Roman"
+          catégorie: "Roman",
         },
         {
           id: "04",
@@ -79,7 +83,7 @@ const boutique = {
           quantite: "7",
           image: "./assets/images/livre4.jpg",
           date_de_parution: "14/10/2020",
-          catégorie: "Roman"
+          catégorie: "Roman",
         },
         {
           id: "05",
@@ -88,7 +92,7 @@ const boutique = {
           quantite: "13",
           image: "./assets/images/livre5.jpg",
           date_de_parution: "17/06/2020",
-          catégorie: "Amour"
+          catégorie: "Amour",
         },
         {
           id: "06",
@@ -97,7 +101,7 @@ const boutique = {
           quantite: "10",
           image: "./assets/images/livre6.jpg",
           date_de_parution: "21/09/2020",
-          catégorie: "Amour"
+          catégorie: "Amour",
         },
         {
           id: "07",
@@ -106,7 +110,7 @@ const boutique = {
           quantite: "5",
           image: "./assets/images/livre7.jpg",
           date_de_parution: "19/02/2020",
-          catégorie: "Roman"
+          catégorie: "Roman",
         },
         {
           id: "08",
@@ -115,7 +119,7 @@ const boutique = {
           quantite: "15",
           image: "./assets/images/livre8.jpg",
           date_de_parution: "16/07/2020",
-          catégorie: "Roman"
+          catégorie: "Roman",
         },
         {
           id: "09",
@@ -124,7 +128,7 @@ const boutique = {
           quantite: "20",
           image: "./assets/images/livre9.jpg",
           date_de_parution: "14/12/2020",
-          catégorie: "Roman"
+          catégorie: "Roman",
         },
         {
           id: "10",
@@ -133,7 +137,7 @@ const boutique = {
           quantite: "10",
           image: "./assets/images/livre10.jpg",
           date_de_parution: "12/02/2020",
-          catégorie: "Roman"
+          catégorie: "Roman",
         },
         {
           id: "11",
@@ -142,7 +146,7 @@ const boutique = {
           quantite: "10",
           image: "./assets/images/livre11.jpg",
           date_de_parution: "17/12/2020",
-          catégorie: "Roman"
+          catégorie: "Roman",
         },
         {
           id: "12",
@@ -151,7 +155,7 @@ const boutique = {
           quantite: "20",
           image: "./assets/images/livre12.jpg",
           date_de_parution: "24/08/2020",
-          catégorie: "Amour"
+          catégorie: "Amour",
         },
         {
           id: "13",
@@ -160,7 +164,7 @@ const boutique = {
           quantite: "30",
           image: "./assets/images/livre13.jpg",
           date_de_parution: "07/10/2020",
-          catégorie: "Roman"
+          catégorie: "Roman",
         },
         {
           id: "14",
@@ -169,7 +173,7 @@ const boutique = {
           quantite: "10",
           image: "./assets/images/livre14.jpg",
           date_de_parution: "18/10/2020",
-          catégorie: "Amour"
+          catégorie: "Amour",
         },
         {
           id: "15",
@@ -178,7 +182,7 @@ const boutique = {
           quantite: "20",
           image: "./assets/images/livre15.jpg",
           date_de_parution: "16/03/2020",
-          catégorie: "Amour"
+          catégorie: "Amour",
         },
         {
           id: "16",
@@ -187,7 +191,7 @@ const boutique = {
           quantite: "20",
           image: "./assets/images/livre16.jpg",
           date_de_parution: "21/10/2020",
-          catégorie: "Roman"
+          catégorie: "Roman",
         },
         {
           id: "17",
@@ -196,7 +200,7 @@ const boutique = {
           quantite: "25",
           image: "./assets/images/livre17.jpg",
           date_de_parution: "21/09/2020",
-          catégorie: "Roman"
+          catégorie: "Roman",
         },
         {
           id: "18",
@@ -205,7 +209,7 @@ const boutique = {
           quantite: "10",
           image: "./assets/images/livre18.jpg",
           date_de_parution: "18/06/2020",
-          catégorie: "Roman"
+          catégorie: "Roman",
         },
         {
           id: "19",
@@ -214,7 +218,7 @@ const boutique = {
           quantite: "10",
           image: "./assets/images/livre19.jpg",
           date_de_parution: "24/02/2020",
-          catégorie: "Fantastique"
+          catégorie: "Fantastique",
         },
         {
           id: "20",
@@ -223,7 +227,7 @@ const boutique = {
           quantite: "20",
           image: "./assets/images/livre20.jpg",
           date_de_parution: "18/11/2020",
-          catégorie: "Roman"
+          catégorie: "Roman",
         },
         {
           id: "21",
@@ -232,7 +236,7 @@ const boutique = {
           quantite: "10",
           image: "./assets/images/livre21.jpg",
           date_de_parution: "14/12/2020",
-          catégorie: "Roman"
+          catégorie: "Roman",
         },
         {
           id: "22",
@@ -241,7 +245,7 @@ const boutique = {
           quantite: "10",
           image: "./assets/images/livre22.jpg",
           date_de_parution: "09/05/2020",
-          catégorie: "Amour"
+          catégorie: "Amour",
         },
         {
           id: "23",
@@ -250,7 +254,7 @@ const boutique = {
           quantite: "15",
           image: "./assets/images/livre23.jpg",
           date_de_parution: "27/09/2020",
-          catégorie: "Fantastique"
+          catégorie: "Fantastique",
         },
         {
           id: "24",
@@ -259,7 +263,7 @@ const boutique = {
           quantite: "20",
           image: "./assets/images/livre24.jpg",
           date_de_parution: "13/11/2020",
-          catégorie: "Fantastique"
+          catégorie: "Fantastique",
         },
         {
           id: "25",
@@ -268,7 +272,7 @@ const boutique = {
           quantite: "35",
           image: "./assets/images/livre25.jpg",
           date_de_parution: "11/11/2020",
-          catégorie: "Roman"
+          catégorie: "Roman",
         },
         {
           id: "26",
@@ -277,7 +281,7 @@ const boutique = {
           quantite: "40",
           image: "./assets/images/livre26.jpg",
           date_de_parution: "24/12/2020",
-          catégorie: "Fantastique"
+          catégorie: "Fantastique",
         },
         {
           id: "27",
@@ -286,7 +290,7 @@ const boutique = {
           quantite: "25",
           image: "./assets/images/livre27.jpg",
           date_de_parution: "15/06/2020",
-          catégorie: "Roman"
+          catégorie: "Roman",
         },
         {
           id: "28",
@@ -295,7 +299,7 @@ const boutique = {
           quantite: "20",
           image: "./assets/images/livre28.jpg",
           date_de_parution: "09/07/2020",
-          catégorie: "Amour"
+          catégorie: "Amour",
         },
         {
           id: "29",
@@ -304,7 +308,7 @@ const boutique = {
           quantite: "20",
           image: "./assets/images/livre29.jpg",
           date_de_parution: "13/07/2020",
-          catégorie: "Fantastique"
+          catégorie: "Fantastique",
         },
         {
           id: "30",
@@ -313,25 +317,24 @@ const boutique = {
           quantite: "25",
           image: "./assets/images/livre30.jpg",
           date_de_parution: "12/10/2020",
-          catégorie: "Amour"
+          catégorie: "Amour",
         },
-
       ],
-    })
-
+    };
   },
   components: {
     cards,
-  }
+  },
 };
 const livre_or = {
   template: `
     <div>
         <div id="app">
             <form>
-                <input v-model="pseudo">
-                <input v-model="date">
-                <input v-model="message">
+                
+        <input v-model="date" placeholder="Entrez la date">
+        <input v-model="pseudo" placeholder="Entrez votre pseudo">
+        <input v-model="message" placeholder="Entrez votre message">
 
                 <button type="submit" v-on:click="addCom">Envoyer</button>
                 <div v-for="livre_or in commentaire">
@@ -342,18 +345,19 @@ const livre_or = {
     </div>`,
 
   data: function () {
-    return ({
-
+    return {
       pseudo: "",
       date: "",
       message: "",
       completed: false,
-      commentaire: [{
-        pseudo: "Steven",
-        date: "05/10/2020",
-        message: "Trop cool ce site, un plaisir !!!",
-      }],
-    })
+      commentaire: [
+        {
+          pseudo: "Steven",
+          date: "05/10/2020",
+          message: "Trop cool ce site, un plaisir !!!",
+        },
+      ],
+    };
   },
   methods: {
     addCom() {
@@ -391,15 +395,15 @@ const formulaire_contact = {
             </div>
         </div>`,
   data: function () {
-    return ({
+    return {
       disparaitre: true,
       message: false,
-    })
-  }
-
+    };
+  },
 };
 
-var routes = [{
+var routes = [
+  {
     path: "/accueil",
     component: accueil,
   },
@@ -421,28 +425,24 @@ const router = new VueRouter({
   routes: routes,
 });
 
-
-
-
-
 var vm = new Vue({
   el: "#app",
   router: router,
   data: {
-
     pseudo: "",
     date: "",
     message: "",
     disparaitre: true,
     message: false,
 
-
-    todos: [{
-      pseudo: "Steven",
-      date: "05/10/2020",
-      message: "Trop cool ce site, un plaisir !!!",
-      completed: false,
-    }],
+    todos: [
+      {
+        pseudo: "Steven",
+        date: "05/10/2020",
+        message: "Trop cool ce site, un plaisir !!!",
+        completed: false,
+      },
+    ],
   },
   checkForm: function (e) {
     this.errors = [];
@@ -462,7 +462,4 @@ var vm = new Vue({
 
     e.preventDefault();
   },
-
-
-
 });
