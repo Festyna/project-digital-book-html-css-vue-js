@@ -1,22 +1,23 @@
 let cards = {
   template: `
 <div>
-    <div class="partie">
-        <div>
-            <h2 class="titre">{{title}}</h2>
-            <img id="img" :src="img">
-            <transition name="cards">
-            <div v-show="!cards">
-                <p>Prix: {{prixht}} €</p>
-                <p>Quantité: {{quantite}}</p>
-                <p>Date de sortie: {{date_de_parution}}</p>
-                </div>
-            </transition>
-        </div>
-    </div>
-    <div>
-        <button @click="cards =! cards">Cliquer !!!</button>
-    </div>
+        <div class="partie">
+            <div>
+                  <h2 class="titre">{{title}}</h2>
+                  <img id="img" :src="img">
+                  <transition name="cards">
+                  <div v-show="!cards">
+                      <p>Prix: {{prixht}} €</p>
+                      <p>Quantité: {{quantite}}</p>
+                      <p>Date de sortie: {{date_de_parution}}</p>
+                      </div>
+                  </transition>
+              </div>
+          </div>
+              <div>
+                  <button @click="cards =! cards">Cliquer !!!</button>
+              </div>
+      
 </div>  `,
   data: function () {
     return {
@@ -34,7 +35,70 @@ let cards = {
 };
 
 const accueil = {
-  template: `<div></div>`,
+  template: `<div class="cd_background">
+
+                          <section id="slideshow">
+                                    <div class="entire-content">
+                                        <div class="content-carrousel">
+                                            <figure class="shadow"><img src="./assets/rose-2101475_1920.jpg"></figure>
+                                            <figure class="shadow"><img src="./assets/removebg-preview.png" /></figure>
+                                            <figure class="shadow"><img src="./assets/paper-1100254_1920.jpg" /></figure>
+                                            <figure class="shadow"><img src="./assets/narrative-794978_1920.jpg" /></figure>
+                                            <figure class="shadow"><img src="./assets/girl-3421489_1920.jpg" /></figure>
+                                            <figure class="shadow"><img src="./assets/book-1659717_1920.jpg" /></figure>
+                                            <figure class="shadow"><img src="./assets/book-419589_1920.jpg" /></figure>
+                                            <figure class="shadow"><img src="./assets/book-863418_1920.jpg" /></figure>
+                                            <figure class="shadow"><img src="./assets/book-2929646_1920.jpg" /></figure>
+                                        </div>
+                                    </div>
+
+
+                                    <div>
+
+
+                            </section>
+
+        <div class="container">
+
+            <div class="profile-container">
+
+                <div class="profile-wrapper">
+
+                    <div class="profile-card">
+                        <div class="fav-icon">
+                            <i class="far fa-heart"></i>
+                        </div>
+
+                        Profile-Picture
+                        <img src="./assets/hninja-1.jpg" alt="profile pics">
+
+                        <h2>Gabriella Moreira</h2>
+                        <h4>Lead Developer</h4>
+
+                        <p>Lorem ipsum dolor sit amet conse adipisicing elit. Odit omnis odio tenetur eveniet soluta
+                            numquam
+                            deleniti sequi dolore nostrum sit.</p>
+
+                        Social Icons
+                        <div class="icons">
+                            <i class=>
+                                <!--<img src= "#" >--> </i>
+                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-instagram"></i>
+                            <i class="fab fa-behance"></i>
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+
+                        Profile Button
+                        <a href="#">View Profile</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+  </div>`,
 };
 
 const boutique = {
@@ -48,8 +112,7 @@ const boutique = {
   data: function () {
     return {
       cards: true,
-      stock: [
-        {
+      stock: [{
           id: "01",
           titre: "C'est arrivé la nuit",
           prixht: "10",
@@ -350,13 +413,11 @@ const livre_or = {
       date: "",
       message: "",
       completed: false,
-      commentaire: [
-        {
-          pseudo: "Steven",
-          date: "05/10/2020",
-          message: "Trop cool ce site, un plaisir !!!",
-        },
-      ],
+      commentaire: [{
+        pseudo: "Steven",
+        date: "05/10/2020",
+        message: "Trop cool ce site, un plaisir !!!",
+      }, ],
     };
   },
   methods: {
@@ -374,25 +435,36 @@ const livre_or = {
 const formulaire_contact = {
   template: `
         <div id="app">
-            <form v-if='disparaitre'>
-
-                <div>
-                    <p>NOM</p>
-                    <input>
-                    <p>PRENOM</p>
-                    <input>
-                    <p>MAIL</p>
-                    <input>
-                    <p>Message</p>
-                    <input>
-                </div>
-
-                <button type="submit" @click="disparaitre=!disparaitre">Envoyer</button>
-
-            </form>
-            <div v-else="message" class="popup">
-                lol
-            </div>
+        <div class="cd_contact">
+              
+                <form class="contact-form">
+                <h2 class="section-title">Contactez-Nous</h2>
+                    <label class="text-input-label" for="firstname">Prénom</label>
+                    <input type="text" name="prénom" id="firstname" required />
+    
+                    <label class="text-input-label" for="lastname">Nom</label>
+                    <input type="text" name="nom" id="lastname" required />
+    
+                    <label class="text-input-label" for="email">Email</label>
+                    <input type="email" name="email" id="email" required />
+    
+                    <label class="text-input-label" for="message">Message:</label>
+                    <textarea name="message" id="message" required></textarea>
+    
+                    <br />
+    
+                    <input type="checkbox" name="consentement" id="consent" />
+                    <label for="consent" class="checkbox-label">
+                        J'accepte que mes données ci-dessus soient traitées à des
+                        fins de prises de contact commerciales.
+                    </label>
+    
+                    <br />
+    
+                    <button class="submit-button">Envoyer</button>
+                </form>
+            
+                </div class="contact">
         </div>`,
   data: function () {
     return {
@@ -402,8 +474,7 @@ const formulaire_contact = {
   },
 };
 
-var routes = [
-  {
+var routes = [{
     path: "/accueil",
     component: accueil,
   },
@@ -435,14 +506,12 @@ var vm = new Vue({
     disparaitre: true,
     message: false,
 
-    todos: [
-      {
-        pseudo: "Steven",
-        date: "05/10/2020",
-        message: "Trop cool ce site, un plaisir !!!",
-        completed: false,
-      },
-    ],
+    todos: [{
+      pseudo: "Steven",
+      date: "05/10/2020",
+      message: "Trop cool ce site, un plaisir !!!",
+      completed: false,
+    }, ],
   },
   checkForm: function (e) {
     this.errors = [];
