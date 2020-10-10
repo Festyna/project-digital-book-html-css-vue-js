@@ -1,3 +1,5 @@
+
+
 const accueil = {
   template: `
 <div class="cd_background">
@@ -52,52 +54,53 @@ const accueil = {
 };
 
 const boutique = {
-  template: `
-    <div >
-        <div>
-          <div class="partie">
-            <div v-for="stock in stocks" class="cards" :img="stocks.image" :title="stocks.titre" :prixht="stocks.prixht" :quantite="stocks.quantite" :date_de_parution="stocks.date_de_parution">
-          
-              <div>
-                <h2 class="titre">{{stock.titre}}</h2>
-                <img id="img" :src="stock.image">
-               
-                  
-                    <p>Prix: {{stock.prixht}} €</p>
-                    <p>Quantité: {{stock.quantite}}</p>
-                    <p>Date de sortie: {{stock.date_de_parution}}</p>               
+  template: `<div>
+  <div class="cd_container">
+  <div class="cd_cards">
+    <div v-for="stock in stocks" :img="stocks.image" :title="stocks.titre" :prixht="stocks.prixht" :quantite="stocks.quantite" :date_de_parution="stocks.date_de_parution">
+  
+          <div class="cd_carte">
+            <h2 class="titre">{{stock.titre}}</h2>
+            <img id="img" :src="stock.image">
+              
+              <p>Prix: {{stock.prixht}} €</p>
+              <p>Quantité: {{stock.quantite}}</p>
+              <p>Date de sortie: {{stock.date_de_parution}}</p>
+              
+         </div>
+          <button  @click="">Cliquer !!!</button>
+          <button @click="addArticle(stock)">Acheter</button>
+      </div>      
+    </div>
+    
+  </div > 
 
-              </div><button @click="">Cliquer !!!</button>
-            <button @click="addArticle(stock)">Acheter</button>
-            </div>
-            
-          </div > 
-        </div>
-     
-        <div>
-          <table>
-            <thead>
-              <tr>
-                <td></td>
-                <td>titre </td>
-                <td>prix </td>
-              </tr>
-            </thead>
+  
 
-              <tr v-for="bag in panier">
-                <td><img :src="bag.image" /></td>
-                <td>{{bag.titre}} </td>
-                <td>{{bag.prixht}} </td>
-              </tr>
+<div class="cd_panier">
+  <table>
+    <thead>
+      <tr>
+        <td></td>
+        <td>titre </td>
+        <td>prix </td>
+      </tr>
+    </thead>
 
-          </table>
-        </div>
-  </div >`,
+      <tr v-for="bag in panier">
+        <td><img :src="bag.image" /></td>
+        <td>{{bag.titre}} </td>
+        <td>{{bag.prixht}} </td>
+      </tr>
+
+  </table>
+</div>
+</div >`,
   data: function () {
     return {
       cards: true,
-
-      stocks: [{
+      
+   stocks: [{
           id: "01",
           titre: "C'est arrivé la nuit",
           prixht: "10",
@@ -372,9 +375,11 @@ const boutique = {
     };
   },
   methods: {
-    addArticle: function (stock) {
-      this.panier.push(stock)
-    }
+        addArticle: function (stock) {
+          this.panier.push(stock)
+        },
+          
+    
   },
 
 };
@@ -494,6 +499,7 @@ var vm = new Vue({
     message: "",
     disparaitre: true,
     message: false,
+    
 
     todos: [{
       pseudo: "Steven",
