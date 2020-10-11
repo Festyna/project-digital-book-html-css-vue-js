@@ -68,8 +68,8 @@ const boutique = {
               <p>Date de sortie: {{stock.date_de_parution}}</p>
               
          </div>
-          <button  @click="">Cliquer !!!</button>
-          <button @click="addArticle(stock)">Acheter</button>
+          <button class="button_panier"  @click="">Cliquer !!!</button>
+          <button class="button_panier" @click="addArticle(stock)">Acheter</button>
       </div>      
     </div>
     
@@ -385,20 +385,20 @@ const boutique = {
 };
 const livre_or = {
   template: `
-    <div>
-        <div id="app">
+    <div class="cd-livreor">
+        
             <form>
-                
+               <div v-for="livre_or in commentaire">
+                    <h1>Le {{livre_or.date}} {{livre_or.pseudo}} a écrit : {{livre_or.message}}</h1>
+                </div> 
         <input v-model="date" placeholder="Entrez la date">
         <input v-model="pseudo" placeholder="Entrez votre pseudo">
         <input v-model="message" placeholder="Entrez votre message">
 
                 <button type="submit" v-on:click="addCom">Envoyer</button>
-                <div v-for="livre_or in commentaire">
-                    <h1>Le {{livre_or.date}} {{livre_or.pseudo}} a écrit : {{livre_or.message}}</h1>
-                </div>
+                
             </form>
-        </div>
+       
     </div>`,
 
   data: function () {
