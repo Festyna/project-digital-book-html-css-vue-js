@@ -105,7 +105,7 @@ h2.titre  {
   
   height: 800px;
 }
-
+/* bouton carte boutique */
 .button_panier{
   background-color: #3498db;
   color: white;
@@ -126,8 +126,39 @@ h2.titre  {
   box-shadow: 2px #2980b9;
   transform: translateY(4px);
 }
-*/
-/*cards amaury fin*/
+/* Fin bouton */
+
+/* Input livre or */
+
+.form_livreor {
+  margin-left: 10px;
+}
+.inputlivre {
+  border: 1px solid grey;
+  border-radius: 2px;
+  padding: 5px;
+  transition: all 0.5s ease;
+}
+
+.inputlivre:focus {
+  background-color: black;
+  color: wheat;
+}
+
+.form_livreor button[type=submit]{
+  background-color: whitesmoke;
+  border: 1px solid red;
+  padding: 5px;
+  color: red;
+  transition: all 0.5s ease;
+  border-radius: 2px;
+}
+.form_livreor button[type=submit]:hover {
+  background-color: black;
+  color: wheat;
+  border-radius: 150px;
+}
+/* Fin input */
 
 /* Partie Steven */
 

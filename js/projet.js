@@ -387,13 +387,13 @@ const livre_or = {
   template: `
     <div class="cd-livreor">
         
-            <form>
+            <form class="form_livreor">
                <div v-for="livre_or in commentaire">
                     <h1>Le {{livre_or.date}} {{livre_or.pseudo}} a écrit : {{livre_or.message}}</h1>
                 </div> 
-        <input v-model="date" placeholder="Entrez la date">
-        <input v-model="pseudo" placeholder="Entrez votre pseudo">
-        <input v-model="message" placeholder="Entrez votre message">
+        <input v-model="date" placeholder=" Entrez la date" class="inputlivre">
+        <input v-model="pseudo" placeholder=" Entrez votre pseudo" class="inputlivre">
+        <input v-model="message" placeholder=" Entrez votre message" class="inputlivre">
 
                 <button type="submit" v-on:click="addCom">Envoyer</button>
                 
