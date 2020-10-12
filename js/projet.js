@@ -47,7 +47,7 @@ const accueil = {
 
 const boutique = {
   template: `<div>
-  <div class="cd_container">
+  <div class="cd_container ste_container">
   <div class="cd_panier">
   <table>
     <thead>
@@ -64,7 +64,7 @@ const boutique = {
       <td class="prixht_td">{{bag.prixht}}€HT</td>
     </tr>
     <p>Votre panier est de {{this.total}} Euros</p>
-    <button @click.prevent="show=!show" class="submit-button">Payer</button>
+    <button @click.prevent="show=!show" class="submit-button" >Payer</button>
   </table>
 </div>
     <div v-if="show">
@@ -107,7 +107,7 @@ const boutique = {
 
         <br>
 
-          <button @click.prevent="button_hide=!button_hide" class="submit-button">Envoyer</button>
+          <button @click.prevent="button_hide=!button_hide" :disabled="isDisabled" class="submit-button">Envoyer</button>
       </form>
       
     </div>
@@ -163,7 +163,7 @@ const boutique = {
       adressePrenomOk: false,
       adresseCodepostalOk: false,
       adresseVilleOk: false,
-
+      isDisable: false,
 
 
       stocks: [{
@@ -453,7 +453,11 @@ const boutique = {
       })
       this.total = ht * 1.20;
     },
-
+    disabledFree: function () {
+      if (this.adresseNomOk && this.adressePrenomOk && this.adresseCodepostalOk && this.adresseVilleOk) {
+        this.isDisabled = false;
+      }
+    },
     verifNom: function (text) {
       if (isNaN(text) && text !== "null") {
         console.log(text),
