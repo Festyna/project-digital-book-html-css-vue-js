@@ -507,7 +507,7 @@ const formulaire_contact = {
                 <form class="contact-form" v-if='disparaitre'>
                   <h2 class="section-title">Contactez-Nous</h2>
                     <label class="text-input-label" for="firstname">Prénom</label>
-                    <input type="text" name="prénom" id="firstname" required />
+                    <input v-model="vérifText" type="text" name="prénom" id="firstname" required />
     
                     <label class="text-input-label" for="lastname">Nom</label>
                     <input type="text" name="nom" id="lastname" required />
@@ -528,7 +528,7 @@ const formulaire_contact = {
     
                     <br />
     
-                    <button @click.prevent="disparaitre=!disparaitre" class="submit-button">Envoyer</button>
+                    <button @click.prevent="disparaitre=!disparaitre" :disableclass="submit-button">Envoyer</button>
                 </form>
                 <div v-else="message" class="popup">
                   lol
@@ -546,7 +546,7 @@ const formulaire_contact = {
 };
 
 var routes = [{
-  path: "/accueil",
+  path: "/",
   component: accueil,
 },
 {
