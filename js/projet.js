@@ -94,11 +94,11 @@ const boutique = {
       <form class="contact-form cd_contact_boutique">
         <h2 class="">Renseignements</h2>
         <br>
-        <input v-model="nom" placeholder=" Entrez votre nom" class="inputcontact">
+        <input v-model="renseignementNom" placeholder=" Entrez votre nom" class="inputcontact">
         <br>
-        <input v-model="prenom" placeholder=" Entrez votre prenom" class="inputcontact">
+        <input v-model="renseignementPrenom" placeholder=" Entrez votre prenom" class="inputcontact">
         <br>
-        <input v-model="age" placeholder=" Entrez votre age" class="inputcontact">
+        <input v-model="renseignementAge" placeholder=" Entrez votre age" class="inputcontact">
         <br>
 
         <input type="checkbox" name="consentement" id="consent" />
@@ -117,13 +117,13 @@ const boutique = {
       <form class="adresse-form">
       <h2 class="">Adresse :</h2>
       <br>
-      <input v-model="nom" placeholder=" Entrez votre nom" class="inputcontact">
+      <input v-model="adresseNom" @keyup="verifNom(adresseNom)" placeholder=" Entrez votre nom" class="inputcontact">
       <br>
-      <input v-model="adresse" placeholder=" Entrez votre prenom" class="inputcontact">
+      <input v-model="adressePrenom" @keyup="verifPrenom(adressePrenom)" placeholder=" Entrez votre prenom" class="inputcontact">
       <br>
-      <input v-model="codepostal" placeholder=" Entrez votre code postal" class="inputcontact">
+      <input v-model="adresseCodepostal" @keyup="verifCP(adresseCodepostal)" placeholder=" Entrez votre code postal" class="inputcontact">
       <br>
-      <input v-model="ville" placeholder=" Entrez votre ville" class="inputcontact">
+      <input v-model="adresseVille" @keyup="verifVille(adresseVille)" placeholder=" Entrez votre ville" class="inputcontact">
       <br>
 
      <input type="checkbox" name="consentement" id="consent" />
@@ -155,6 +155,17 @@ const boutique = {
       show: true,
       disparaitre: false,
       message_confirmation: true,
+      adresseNom: "",
+      adresseAdresse: "",
+      adresseCodepostal: "",
+      adresseVille: "",
+      adresseNomOk: false,
+      adressePrenomOk: false,
+      adresseCodepostalOk: false,
+      adresseVilleOk: false,
+
+
+
       stocks: [{
         id: "01",
         titre: "C'est arrivé la nuit",
@@ -441,10 +452,47 @@ const boutique = {
         console.log("ht", ht)
       })
       this.total = ht * 1.20;
+    },
 
-    }
+    verifNom: function (text) {
+      if (isNaN(text) && text !== "null") {
+        console.log(text),
+          this.adresseNomOk = true;
+      } else {
+        this.adresseNomOk = false;
+      }
+      this.disabledFree();
+    },
+    verifPrenom: function (text) {
+      if (isNaN(text) && text !== "null") {
+        console.log(text),
+          this.adressePrenomOk = true;
+      } else {
+        this.adressePrenomOk = false;
+      }
+      this.disabledFree();
+    },
+    verifCP: function (text) {
+      if (isNaN(text) && text !== "null") {
+        console.log(text),
+          this.adresseCodepostalOk = true;
+      } else {
+        this.adresseCodepostalOk = false;
+      }
+      this.disabledFree();
+    },
+    verifVille: function (text) {
+      if (isNaN(text) && text !== "null") {
+        console.log(text),
+          this.adresseVilleOk = true;
+      } else {
+        this.adresseVilleOk = false;
+      }
+      this.disabledFree();
+    },
 
   },
+
 
 };
 const livre_or = {
@@ -480,7 +528,6 @@ const livre_or = {
       pseudo: "",
       date: "",
       message: "",
-      completed: false,
       commentaire: [{
         pseudo: "Steven",
         date: "05/10/2020",
@@ -492,7 +539,6 @@ const livre_or = {
     addCom() {
       this.commentaire.push({
         pseudo: this.pseudo,
-        completed: false,
         date: this.date,
         message: this.message,
       });
@@ -619,12 +665,5 @@ var vm = new Vue({
     disparaitre: true,
     message: false,
 
-
-    todos: [{
-      pseudo: "Steven",
-      date: "05/10/2020",
-      message: "Trop cool ce site, un plaisir !!!",
-      completed: false,
-    },],
   },
 });

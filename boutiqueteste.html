@@ -14,35 +14,103 @@
     <!--Navbar-->
 
     <!--FIN Navbar-->
-    <div id="app">
-        <router-link to="/accueil">Accueil</router-link>
-        <router-link to="/boutique">Boutique</router-link>
-        <router-link to="/livre-or">Livre d'or</router-link>
-        <router-link to="/formulaire">Formulaire de contact</router-link>
+    `<div>
+        <div class="cd_container ste_container">
+            <div class="cd_panier">
+                <table>
+                    <thead>
+                        <tr>
+                            <td></td>
+                            <td>titre </td>
+                            <td>prix </td>
+                        </tr>
+                    </thead>
 
-        <h1 class="alignement">Y'a tout qui marche Perlotte !</h1>
-        <div class="alignement">
+                    <tr v-for="bag in panier">
+                        <td><img :src="bag.image" /></td>
+                        <td>{{bag.titre}} </td>
+                        <td>{{bag.prixht}} </td>
+                    </tr>
+                    <p>Votre panier est de {{this.total}}</p>
+                    <button @click.prevent="show=!show" class="submit-button">Payer</button>
+                </table>
+            </div>
+            <div v-if="show">
+                <div class="cd_cards">
+                    <div v-for="stock in stocks" :img="stock.image" :title="stock.titre" :prixht="stock.prixht"
+                        :quantite="stock.quantite" :date_de_parution="stock.date_de_parution">
 
-            <card class="cards" my-img="./assets/images/vue.jpg" my-title="Saperlotte"
-                my-description="Il était une fois la saperlipopette">
-            </card>
-            <card class="cards" my-img="./assets/images/elfenlied.jpg" my-title="Elfen Lied"
-                my-description="Best MANGA EVER"></card>
+                        <div class="cd_carte">
+                            <h2 class="titre">{{stock.titre}}</h2>
+                            <img id="img" :src="stock.image">
+
+                            <p>Prix: {{stock.prixht}} €</p>
+                            <p>Quantité: {{stock.quantite}}</p>
+                            <p>Date de sortie: {{stock.date_de_parution}}</p>
+
+                        </div>
+                        <button class="button_panier" @click="">Cliquer !!!</button>
+                        <button class="button_panier" @click="addArticle(stock)">Acheter</button>
+
+                    </div>
+                </div>
+            </div>
+            <div v-else-if="button_hide">
+                <form class="contact-form cd_contact_boutique">
+                    <h2 class="">Renseignements</h2>
+                    <br>
+                    <input v-model="nom" placeholder=" Entrez votre nom" class="inputcontact">
+                    <br>
+                    <input v-model="prenom" placeholder=" Entrez votre prenom" class="inputcontact">
+                    <br>
+                    <input v-model="age" placeholder=" Entrez votre age" class="inputcontact">
+                    <br>
+
+                    <input type="checkbox" name="consentement" id="consent" />
+                    <label for="consent" class="checkbox-label">
+                        J'accepte que mes données ci-dessus soient traitées à des
+                        fins de prises de contact commerciales.
+                    </label>
+
+                    <br>
+
+                    <button @click.prevent="button_hide=!button_hide" class="submit-button">Envoyer</button>
+                </form>
+
+            </div>
+            <div v-else-if="message_confirmation">
+                <form class="adresse-form">
+                    <h2 class="">Adresse :</h2>
+                    <br>
+                    <input v-model="nom" placeholder=" Entrez votre nom" class="inputcontact">
+                    <br>
+                    <input v-model="adresse" placeholder=" Entrez votre prenom" class="inputcontact">
+                    <br>
+                    <input v-model="codepostal" placeholder=" Entrez votre code postal" class="inputcontact">
+                    <br>
+                    <input v-model="ville" placeholder=" Entrez votre ville" class="inputcontact">
+                    <br>
+
+                    <input type="checkbox" name="consentement" id="consent" />
+                    <label for="consent" class="checkbox-label">
+                        J'accepte que mes données ci-dessus soient traitées à des
+                        fins de prises de contact commerciales.
+                    </label>
+                    <br>
+
+
+                    <button @click.prevent="message_confirmation=!message_confirmation"
+                        v-class="submit-button">Envoyer</button>
+                </form>
+            </div>
+            <div v-else>
+                <h4 class="lsh_popup_boutique">Votre commande a bien été prise en compte</h4>
+            </div>
+
+
         </div>
-    </div>
 
-
-
-    <div>
-        <router-view>
-        </router-view>
-    </div>
-    </div>
-
-
-
-    <!--Footer-->
-    <!--FIN Footer-->
+    </div>`
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
