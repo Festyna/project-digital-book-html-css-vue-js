@@ -26,25 +26,19 @@ const accueil = {
             <i class="far fa-heart"></i>
           </div>
 
-          Profile-Picture
           <img src="./assets/hninja-1.jpg" alt="profile pics">
-          <h2>Gabriella Moreira</h2>
-          <h4>Lead Developer</h4>
-          <p>Lorem ipsum dolor sit amet conse adipisicing elit. Odit omnis odio tenetur eveniet soluta
-          numquam
-          deleniti sequi dolore nostrum sit.</p>
+          <h2>Michael Monfort</h2>
+          <h4>Le Ninja qui te defonce si tu paye pas ton livre 
+          🐙 "Roberto, mio palmo."
+          🍼 Papa x 2
+          </h4>
+          <p>Parmi le vaste choix de genre littéraire qui existent, les romans font partie des plus importants et des genres les plus lus.  </p>
 
-          Social Icons
-            <div class="icons">
-              <i class=>
-              <i class="fab fa-twitter"></i>
-              <i class="fab fa-instagram"></i>
-              <i class="fab fa-behance"></i>
-              <i class="fab fa-linkedin-in"></i>
-            </div>
 
-          Profile Button
-          <a href="#">View Profile</a>
+          
+          
+          <a href="https://www.instagram.com/michael.monfort/?hl=fr%22%3EView">View Profile</a>
+
 
         </div>
       </div>
@@ -56,25 +50,87 @@ const accueil = {
 const boutique = {
   template: `<div>
   <div class="cd_container">
-    <div class="cd_cards">
-      <div v-for="stock in stocks" :img="stock.image" :title="stock.titre" :prixht="stock.prixht"
-        :quantite="stock.quantite" :date_de_parution="stock.date_de_parution">
+    <div v-if="show">
+      <div class="cd_cards" >
+          <div v-for="stock in stocks" :img="stock.image" :title="stock.titre" :prixht="stock.prixht"
+            :quantite="stock.quantite" :date_de_parution="stock.date_de_parution">
 
-        <div class="cd_carte">
-          <h2 class="titre">{{stock.titre}}</h2>
-          <img id="img" :src="stock.image">
+            <div class="cd_carte">
+              <h2 class="titre">{{stock.titre}}</h2>
+              <img id="img" :src="stock.image">
 
-          <p>Prix: {{stock.prixht}} €</p>
-          <p>Quantité: {{stock.quantite}}</p>
-          <p>Date de sortie: {{stock.date_de_parution}}</p>
+              <p>Prix: {{stock.prixht}} €</p>
+              <p>Quantité: {{stock.quantite}}</p>
+              <p>Date de sortie: {{stock.date_de_parution}}</p>
 
+            </div>
+            <button class="button_panier" @click="">Cliquer !!!</button>
+            <button class="button_panier" @click="addArticle(stock)">Acheter</button>
+            
         </div>
-        <button class="button_panier" @click="">Cliquer !!!</button>
-        <button class="button_panier" @click="addArticle(stock)">Acheter</button>
       </div>
     </div>
+    <div v-else-if="button_hide" >
+      <form class="contact-form">
+        <h2 class="">Contactez-Nous</h2>
+        <label class="#" for="firstname">Prénom</label>
+        <input type="text" name="prénom" id="firstname" required />
 
+        <label class="text-input-label" for="lastname">Nom</label>
+        <input type="text" name="nom" id="lastname" required />
 
+        <label class="text-input-label" for="email">Email</label>
+        <input type="email" name="email" id="email" required />
+
+        <label class="text-input-label" for="message">Message:</label>
+        <textarea name="message" id="message" required></textarea>
+
+        <br />
+
+        <input type="checkbox" name="consentement" id="consent" />
+        <label for="consent" class="checkbox-label">
+            J'accepte que mes données ci-dessus soient traitées à des
+            fins de prises de contact commerciales.
+        </label>
+
+        <br />
+
+          <button @click.prevent="button_hide=!button_hide" class="submit-button">Envoyer</button>
+      </form>
+      
+    </div>
+    <div v-else-if="message_confirmation" >
+      <form class="contact-form">
+        <h2 class="">deuxième</h2>
+        <label class="#" for="firstname">Prénom</label>
+        <input type="text" name="prénom" id="firstname" required />
+
+        <label class="text-input-label" for="lastname">Nom</label>
+        <input type="text" name="nom" id="lastname" required />
+
+        <label class="text-input-label" for="email">Email</label>
+        <input type="email" name="email" id="email" required />
+
+        <label class="text-input-label" for="message">Message:</label>
+        <textarea name="message" id="message" required></textarea>
+
+        <br />
+
+        <input type="checkbox" name="consentement" id="consent" />
+        <label for="consent" class="checkbox-label">
+            J'accepte que mes données ci-dessus soient traitées à des
+            fins de prises de contact commerciales.
+        </label>
+
+        <br />
+
+        <button @click.prevent="message_confirmation=!message_confirmation" v-class="submit-button">Envoyer</button>
+      </form>
+    </div>
+    <div v-else>
+      Bon appétit !
+    </div>
+    
 
 
 
@@ -94,7 +150,7 @@ const boutique = {
           <td>{{bag.prixht}} </td>
         </tr>
         <p>Votre panier est de {{this.total}}</p>
-
+        <button @click.prevent="show=!show" class="submit-button">Payer</button>
       </table>
     </div>
   </div>
@@ -104,8 +160,11 @@ const boutique = {
       total: 0,
       nb_articles: 0,
       prix_panier: 0,
+      button_hide: true,
       cards: true,
-
+      show: true,
+      disparaitre: false,
+      message_confirmation: true,
       stocks: [{
         id: "01",
         titre: "C'est arrivé la nuit",
@@ -444,10 +503,9 @@ const livre_or = {
 const formulaire_contact = {
   template: `
         <div id="app">
-        <div class="cd_contact">
-              
+        <div class="cd_contact">              
                 <form class="contact-form" v-if='disparaitre'>
-                <h2 class="section-title">Contactez-Nous</h2>
+                  <h2 class="section-title">Contactez-Nous</h2>
                     <label class="text-input-label" for="firstname">Prénom</label>
                     <input type="text" name="prénom" id="firstname" required />
     
@@ -477,7 +535,7 @@ const formulaire_contact = {
                 </div>
 
             
-                </div class="contact">
+                </div>
         </div>`,
   data: function () {
     return {
@@ -526,23 +584,5 @@ var vm = new Vue({
       message: "Trop cool ce site, un plaisir !!!",
       completed: false,
     },],
-  },
-  checkForm: function (e) {
-    this.errors = [];
-
-    if (!this.name) {
-      this.errors.push("Name required.");
-    }
-    if (!this.email) {
-      this.errors.push("Email required.");
-    } else if (!this.validEmail(this.email)) {
-      this.errors.push("Valid email required.");
-    }
-
-    if (!this.errors.length) {
-      return true;
-    }
-
-    e.preventDefault();
   },
 });
