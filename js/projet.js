@@ -450,7 +450,7 @@ const formulaire_contact = {
     
                     <br />
     
-                    <button @click="disparaitre=!disparaitre" class="submit-button">Envoyer</button>
+                    <button @click.prevent="disparaitre=!disparaitre" class="submit-button">Envoyer</button>
                 </form>
                 <div v-else="message" class="popup">
                   lol
