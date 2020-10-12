@@ -495,16 +495,16 @@ const formulaire_contact = {
                 <form class="contact-form" v-if='disparaitre'>
                   <h2 class="section-title">Contactez-Nous</h2>
                     <label class="text-input-label" for="firstname">Prénom</label>
-                    <input v-model="text" @keyup="verifTexte" type="text" name="prénom" id="firstname" required />
+                    <input v-model="text" @keyup="verifTexte(text)" type="text" name="prénom" id="firstname" required />
     
                     <label class="text-input-label" for="lastname">Nom</label>
-                    <input type="text" name="nom" id="lastname" required />
+                    <input v-model="textnom" @keyup="verifNom(textnom)"type="text" name="nom" id="lastname" required />
     
                     <label class="text-input-label" for="email">Email</label>
-                    <input type="email" name="email" id="email" required />
+                    <input v-model="textmail"  type="email" name="email" id="email" required />
     
                     <label class="text-input-label" for="message">Message:</label>
-                    <textarea name="message" id="message" required></textarea>
+                    <textarea v-model="textmessage" @keyup="verifMessage(textmessage)" type="text" name="message" id="message" required></textarea>
     
                     <br />
     
@@ -516,10 +516,10 @@ const formulaire_contact = {
     
                     <br />
     
-                    <button @click.prevent="disparaitre=!disparaitre"  class="submit-button">Envoyer</button>
+                    <button @click.prevent="disparaitre=!disparaitre" :disabled="isDisabled" class="submit-button">Envoyer</button>
                 </form>
-                <div v-else="message" class="popup">
-                  lol
+                <div v-else="message" class="lsh_popup">
+                  <h5>Votre message a bien été enregistré</h5>
                 </div>
 
             
@@ -530,20 +530,49 @@ const formulaire_contact = {
       disparaitre: true,
       message: false,
       text: "",
+      textnom: "",
+      textmail: "",
+      textmessage: "",
       isDisabled: true,
+      textOk: false,
+      nomOk: false,
+      mailOk: true,
+      messageOk: false,
+
     };
   },
   methods: {
+    disabledFree: function () {
+      if (this.textOk && this.nomOk && this.mailOk && this.messageOk) {
+        this.isDisabled = false;
+      }
+    },
     verifTexte: function (text) {
       if (isNaN(text) && text !== "null") {
         console.log(text),
-          text === true
+          this.textOk = true;
       } else {
-        text !== true
+        this.textOk = false;
       }
-    }
-
-  }
+      this.disabledFree();
+    },
+    verifNom: function (nom) {
+      if (isNaN(nom) && nom !== "null") {
+        this.nomOk = true;
+      } else {
+        this.nomOk = false;
+      }
+      this.disabledFree();
+    },
+    verifMessage: function (message) {
+      if (isNaN(message) && message !== "null") {
+        this.messageOk = true;
+      } else {
+        this.messageOk = false;
+      }
+      this.disabledFree();
+    },
+  },
 };
 
 var routes = [{
