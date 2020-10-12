@@ -90,7 +90,7 @@ h2.titre  {
 }
 
 .cd-livreor {
-  background-image: url(/assets/images/livreor.jpg);
+  background-image: url(./livreor.jpg);
   background-size: cover;
   background-position: center center;
   
@@ -222,7 +222,7 @@ h2.titre  {
 }
 
 .cd_background {
-  background-image: url("/assets/narrative-794978_1920.jpg");
+  background-image: url("./narrative-794978_1920.jpg");
   background-size: fixed;
   min-height: 115vh;
   -webkit-background-size: cover;

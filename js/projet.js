@@ -30,7 +30,11 @@ const accueil = {
           🐙 "Roberto, mio palmo."
           🍼 Papa x 2
           </h4>
-          <p>Parmi le vaste choix de genre littéraire qui existent, les romans font partie des plus importants et des genres les plus lus.  </p>
+          <p> l'amitie c'est comme un livre 
+          il y a des amis juste pour une page 
+          d'autre pour un chapitre entier 
+          et puis il y a les vrais qui sont present tous au long de l'histoire </p>
+         
 
 
           
@@ -132,7 +136,7 @@ const boutique = {
         <br>
         
 
-        <button @click.prevent="message_confirmation=!message_confirmation" v-class="submit-button">Envoyer</button>
+        <button @click.prevent="message_confirmation=!message_confirmation" :disabled="isDisabled" v-class="submit-button">Envoyer</button>
       </form>
     </div>
     <div v-else>
@@ -155,6 +159,9 @@ const boutique = {
       show: true,
       disparaitre: false,
       message_confirmation: true,
+      renseignementNom: "",
+      renseignementPrenom: "",
+      renseignementAge: "",
       adresseNom: "",
       adresseAdresse: "",
       adresseCodepostal: "",
@@ -163,7 +170,7 @@ const boutique = {
       adressePrenomOk: false,
       adresseCodepostalOk: false,
       adresseVilleOk: false,
-      isDisable: false,
+      isDisable: true,
 
 
       stocks: [{
