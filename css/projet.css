@@ -102,10 +102,15 @@ h2.titre  {
 .lsh_livre_or{
   text-align:center;
   padding-top:30px;
-  
-
 }
-
+.lsh_livreor_espaces{
+  min-height:300px;
+}
+.lsh_livreor{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 /* bouton carte boutique */
 .button_panier{
@@ -592,9 +597,8 @@ footer {
 .cd_contact_boutique{
   width:100%;
 }
+
 /* fin page contact.html*/
-
-
 
 /* Pied de page contact.html */
 .foutercontact {

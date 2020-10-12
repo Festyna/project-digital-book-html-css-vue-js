@@ -70,13 +70,8 @@ const boutique = {
       <td class="prixht_td">{{bag.prixht}}€HT</td>
       <td><button class="submit-button" @click.prevent="del">Supprimer</button></td></td>
     </tr>
-<<<<<<< HEAD
     
     
-=======
-    <p class="para_panier">Votre panier est de {{this.total}}€</p>
-    <button @click.prevent="show=!show" class="submit-button">Payer</button>
->>>>>>> 208cfe2a9399207069dfd7bf7d61fd9051c5e3aa
   </table>
 </div>
     <div v-if="show">
@@ -135,16 +130,10 @@ const boutique = {
       <br>
       <input v-model="adresseVille" @keyup="verifVille(adresseVille)" placeholder=" Entrez votre ville" class="inputcontact">
       <br>
-
-     <input type="checkbox" name="consentement" id="consent" />
-        <label for="consent" class="checkbox-label">
-            J'accepte que mes données ci-dessus soient traitées à des
-            fins de prises de contact commerciales.
-        </label>
         <br>
         
 
-        <button @click.prevent="message_confirmation=!message_confirmation" :disabled="isDisabledVerif" v-class="submit-button">Envoyer</button>
+        <button class="submit-button" @click.prevent="message_confirmation=!message_confirmation" :disabled="isDisabledVerif" v-class="submit-button">Envoyer</button>
       </form>
     </div>
     <div v-else >
@@ -573,21 +562,27 @@ const boutique = {
 const livre_or = {
   template: `
     <div class="cd-livreor">
+        <div div class="lsh_livreor_espaces">
+          <form class="form_livreor">
+            <div v-for="livre_or in commentaire">
+              <h1 class="lsh_livre_or">Le {{livre_or.date}} {{livre_or.pseudo}} a écrit : {{livre_or.message}}</h1>
+            </div > 
+        </div >        
+        <div class="lsh_livreor">
+          <input v-model="date" placeholder=" Entrez la date" class="inputlivre">
+          <input v-model="pseudo" placeholder=" Entrez votre pseudo" class="inputlivre">
+          <br>
+        </div>
+        <div class="lsh_livreor">
+          <input v-model="message" placeholder=" Entrez votre message" class="inputlivre">
+          <br><br><br><br>
+        </div>
         
-            <form class="form_livreor">
-               <div v-for="livre_or in commentaire">
-                  <h1 class="lsh_livre_or">Le {{livre_or.date}} {{livre_or.pseudo}} a écrit : {{livre_or.message}}</h1>
-                </div> 
-                <input v-model="date" placeholder=" Entrez la date" class="inputlivre">
-                <input v-model="pseudo" placeholder=" Entrez votre pseudo" class="inputlivre">
-                <br>
-                <input v-model="message" placeholder=" Entrez votre message" class="inputlivre">
-
-                <button type="submit" v-on:click="addCom">Envoyer</button>
-                
-            </form>
-       
-    </div>`,
+      <div class="form_livreor lsh_livreor">
+        <button type="submit" v-on:click="addCom">Envoyer</button>
+      </div>
+  </form>
+</div>`,
 
   data: function () {
     return {
