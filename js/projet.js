@@ -70,20 +70,14 @@ const boutique = {
     </div>
     <div v-else-if="button_hide" >
       <form class="contact-form">
-        <h2 class="">Contactez-Nous</h2>
-        <label class="#" for="firstname">Prénom</label>
-        <input type="text" name="prénom" id="firstname" required />
-
-        <label class="text-input-label" for="lastname">Nom</label>
-        <input type="text" name="nom" id="lastname" required />
-
-        <label class="text-input-label" for="email">Email</label>
-        <input type="email" name="email" id="email" required />
-
-        <label class="text-input-label" for="message">Message:</label>
-        <textarea name="message" id="message" required></textarea>
-
-        <br />
+        <h2 class="">Renseignements</h2>
+        <br>
+        <input v-model="nom" placeholder=" Entrez votre nom" class="inputcontact">
+        <br>
+        <input v-model="prenom" placeholder=" Entrez votre prenom" class="inputcontact">
+        <br>
+        <input v-model="age" placeholder=" Entrez votre age" class="inputcontact">
+        <br>
 
         <input type="checkbox" name="consentement" id="consent" />
         <label for="consent" class="checkbox-label">
@@ -91,36 +85,32 @@ const boutique = {
             fins de prises de contact commerciales.
         </label>
 
-        <br />
+        <br>
 
           <button @click.prevent="button_hide=!button_hide" class="submit-button">Envoyer</button>
       </form>
       
     </div>
     <div v-else-if="message_confirmation" >
-      <form class="contact-form">
-        <h2 class="">deuxième</h2>
-        <label class="#" for="firstname">Prénom</label>
-        <input type="text" name="prénom" id="firstname" required />
+      <form class="adresse-form">
+      <h2 class="">Adresse :</h2>
+      <br>
+      <input v-model="nom" placeholder=" Entrez votre nom" class="inputcontact">
+      <br>
+      <input v-model="adresse" placeholder=" Entrez votre prenom" class="inputcontact">
+      <br>
+      <input v-model="codepostal" placeholder=" Entrez votre code postal" class="inputcontact">
+      <br>
+      <input v-model="ville" placeholder=" Entrez votre ville" class="inputcontact">
+      <br>
 
-        <label class="text-input-label" for="lastname">Nom</label>
-        <input type="text" name="nom" id="lastname" required />
-
-        <label class="text-input-label" for="email">Email</label>
-        <input type="email" name="email" id="email" required />
-
-        <label class="text-input-label" for="message">Message:</label>
-        <textarea name="message" id="message" required></textarea>
-
-        <br />
-
-        <input type="checkbox" name="consentement" id="consent" />
+     <input type="checkbox" name="consentement" id="consent" />
         <label for="consent" class="checkbox-label">
             J'accepte que mes données ci-dessus soient traitées à des
             fins de prises de contact commerciales.
         </label>
-
-        <br />
+        <br>
+        
 
         <button @click.prevent="message_confirmation=!message_confirmation" v-class="submit-button">Envoyer</button>
       </form>

@@ -17,31 +17,6 @@
 
 }
 
-/* .show-enter-active,
-.show-leave-active {
-  transition: opacity 1.5s;
-  
-}
-
-.show-enter,
-.show-leave-to {
-  opacity: 0;
-   */
-
-
-/* .shows-enter-active,
-.shows-leave-active {
-  transition: opacity 1.5s;
-  color: yellow;
-}
-
-.shows-enter,
-.shows-leave-to {
-  opacity: 0;
-  color: green;
-} */
-
-
 .alignement {
   width: 50%;
   display: flex;
@@ -77,6 +52,7 @@
   margin-top: 30px;
   height: 4000px;
 }
+
 .cd_panier{
   float: right;
   width:30%;
@@ -171,6 +147,38 @@ h2.titre  {
   border-radius: 150px;
 }
 /* Fin input */
+/* Formulaire contact boutique */
+
+.inputcontact{
+  
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 15px;
+  margin-bottom: 20px;
+  width: 30%;
+  padding-top: 20px;
+  border: 1px solid grey;
+  background-color: whitesmoke;
+
+}
+.submit-button{
+  background-color: whitesmoke;
+  border: 1px solid red;
+  padding: 5px;
+  color: red;
+  transition: all 0.5s ease;
+  border-radius: 2px;
+}
+
+.submit-button:hover {
+  background-color: black;
+  color: wheat;
+  border-radius: 150px;
+
+}
+
+/* Fin form boutique */
+
 
 /* Partie Steven */
 
@@ -187,14 +195,6 @@ h2.titre  {
   min-height: 115vh;
   -webkit-background-size: cover;
 }
-
-/* body {
-  background-image: url(/assets/narrative-794978_1920.jpg);
-  background-size: cover;
-  background-position: center center;
-  font-family: sans-serif;
- } */
-
 
 .menu-bar {
   background-color: rgba(125, 84, 56, 0.906);
