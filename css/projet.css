@@ -110,6 +110,13 @@ h2.titre  {
   
   height: 800px;
 }
+.lsh_livre_or{
+  min-height:500px;
+  text-align:center;
+  padding-top:30px;
+}
+
+
 /* bouton carte boutique */
 .button_panier{
   background-color: #3498db;

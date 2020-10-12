@@ -461,7 +461,7 @@ const livre_or = {
         
             <form class="form_livreor">
                <div v-for="livre_or in commentaire">
-                    <h1>Le {{livre_or.date}} {{livre_or.pseudo}} a écrit : {{livre_or.message}}</h1>
+                    <h1 class="lsh_livre_or">Le {{livre_or.date}} {{livre_or.pseudo}} a écrit : {{livre_or.message}}</h1>
                 </div> 
         <input v-model="date" placeholder=" Entrez la date" class="inputlivre">
         <input v-model="pseudo" placeholder=" Entrez votre pseudo" class="inputlivre">
