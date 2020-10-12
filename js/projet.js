@@ -30,11 +30,8 @@ const accueil = {
           🐙 "Roberto, mio palmo."
           🍼 Papa x 2
           </h4>
-          <p> l'amitie c'est comme un livre 
-          il y a des amis juste pour une page 
-          d'autre pour un chapitre entier 
-          et puis il y a les vrais qui sont present tous au long de l'histoire </p>
-         
+          <p>Parmi le vaste choix de genre littéraire qui existent, les romans font partie des plus importants et des genres les plus lus.  </p>
+
 
           
           
@@ -50,26 +47,26 @@ const accueil = {
 
 const boutique = {
   template: `<div>
-  <div class="cd_container ste_container">
+  <div class="cd_container">
   <div class="cd_panier">
-      <table>
-        <thead>
-          <tr>
-            <td></td>
-            <td>titre </td>
-            <td>prix </td>
-          </tr>
-        </thead>
+  <table>
+    <thead>
+      <tr>
+        <td></td>
+        <td><h1>titre: </h1></td>
+        <td><h1>prix: </h1></td>
+      </tr>
+    </thead>
 
-        <tr v-for="bag in panier">
-          <td><img :src="bag.image" /></td>
-          <td>{{bag.titre}} </td>
-          <td>{{bag.prixht}} </td>
-        </tr>
-        <p>Votre panier est de {{this.total}}</p>
-        <button @click.prevent="show=!show" class="submit-button">Payer</button>
-      </table>
-    </div>
+    <tr v-for="bag in panier">
+      <td><img :src="bag.image"/></td>
+      <td>{{bag.titre}} </td>
+      <td class="prixht_td">{{bag.prixht}}€HT</td>
+    </tr>
+    <p>Votre panier est de {{this.total}} Euros</p>
+    <button @click.prevent="show=!show" class="submit-button">Payer</button>
+  </table>
+</div>
     <div v-if="show">
       <div class="cd_cards" >
           <div v-for="stock in stocks" :img="stock.image" :title="stock.titre" :prixht="stock.prixht"
@@ -84,14 +81,15 @@ const boutique = {
               <p>Date de sortie: {{stock.date_de_parution}}</p>
 
             </div>
-            <button class="button_panier" @click="">Cliquer !!!</button>
+            
             <button class="button_panier" @click="addArticle(stock)">Acheter</button>
             
         </div>
       </div>
     </div>
+    
     <div v-else-if="button_hide" >
-      <form class="contact-form cd_contact_boutique">
+      <form class="contact-form">
         <h2 class="">Renseignements</h2>
         <br>
         <input v-model="renseignementNom" placeholder=" Entrez votre nom" class="inputcontact">
@@ -138,12 +136,14 @@ const boutique = {
       </form>
     </div>
     <div v-else>
-      <h4 class="lsh_popup_boutique">Votre commande a bien été prise en compte</h4>
+      Bon appétit !
     </div>
     
-    
-  </div>
 
+
+
+
+  </div>
 </div>`,
   data: function () {
     return {
@@ -499,27 +499,17 @@ const livre_or = {
   template: `
     <div class="cd-livreor">
         
-      <form class="form_livreor">
-        <div v-for="livre_or in commentaire">
-            <h1 class="lsh_livre_or">Le {{livre_or.date}} {{livre_or.pseudo}} a écrit : {{livre_or.message}}</h1>
-        </div> 
-        <form class="contact-form">
-          <h2 class="">Renseignements</h2>
-          <br>
-          <input v-model="date" placeholder=" Entrez la date" class="inputcontact">
-          <br>
-          <input v-model="pseudo" placeholder=" Entrez votre pseudo" class="inputcontact">
-          <br>
-          <input v-model="message" placeholder=" Entrez votre message" class="inputcontact">
-          <br>
+            <form class="form_livreor">
+               <div v-for="livre_or in commentaire">
+                    <h1 class="lsh_livre_or">Le {{livre_or.date}} {{livre_or.pseudo}} a écrit : {{livre_or.message}}</h1>
+                </div> 
+        <input v-model="date" placeholder=" Entrez la date" class="inputlivre">
+        <input v-model="pseudo" placeholder=" Entrez votre pseudo" class="inputlivre">
+        <input v-model="message" placeholder=" Entrez votre message" class="inputlivre">
 
-          <input type="checkbox" name="consentement" id="consent" />
-
-      </form>
-
-        <button type="submit" v-on:click="addCom">Envoyer</button>
-        
-    </form>
+                <button type="submit" v-on:click="addCom">Envoyer</button>
+                
+            </form>
        
     </div>`,
 
