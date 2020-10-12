@@ -1,5 +1,3 @@
-
-
 const accueil = {
   template: `
 <div class="cd_background">
@@ -507,7 +505,7 @@ const formulaire_contact = {
                 <form class="contact-form" v-if='disparaitre'>
                   <h2 class="section-title">Contactez-Nous</h2>
                     <label class="text-input-label" for="firstname">Prénom</label>
-                    <input v-model="vérifText" type="text" name="prénom" id="firstname" required />
+                    <input v-model="text" @keyup="verifTexte" type="text" name="prénom" id="firstname" required />
     
                     <label class="text-input-label" for="lastname">Nom</label>
                     <input type="text" name="nom" id="lastname" required />
@@ -528,7 +526,7 @@ const formulaire_contact = {
     
                     <br />
     
-                    <button @click.prevent="disparaitre=!disparaitre" :disableclass="submit-button">Envoyer</button>
+                    <button @click.prevent="disparaitre=!disparaitre"  class="submit-button">Envoyer</button>
                 </form>
                 <div v-else="message" class="popup">
                   lol
@@ -541,8 +539,21 @@ const formulaire_contact = {
     return {
       disparaitre: true,
       message: false,
+      text: "",
+      isDisabled: true,
     };
   },
+  methods: {
+    verifTexte: function (text) {
+      if (isNaN(text) && text !== "null") {
+        console.log(text),
+          text === true
+      } else {
+        text !== true
+      }
+    }
+
+  }
 };
 
 var routes = [{
