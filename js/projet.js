@@ -48,6 +48,25 @@ const accueil = {
 const boutique = {
   template: `<div>
   <div class="cd_container">
+  <div class="cd_panier">
+  <table>
+    <thead>
+      <tr>
+        <td></td>
+        <td><h1>titre: </h1></td>
+        <td><h1>prix: </h1></td>
+      </tr>
+    </thead>
+
+    <tr v-for="bag in panier">
+      <td><img :src="bag.image"/></td>
+      <td>{{bag.titre}} </td>
+      <td class="prixht_td">{{bag.prixht}}€HT</td>
+    </tr>
+    <p>Votre panier est de {{this.total}} Euros</p>
+    <button @click.prevent="show=!show" class="submit-button">Payer</button>
+  </table>
+</div>
     <div v-if="show">
       <div class="cd_cards" >
           <div v-for="stock in stocks" :img="stock.image" :title="stock.titre" :prixht="stock.prixht"
@@ -62,12 +81,13 @@ const boutique = {
               <p>Date de sortie: {{stock.date_de_parution}}</p>
 
             </div>
-            <button class="button_panier" @click="">Cliquer !!!</button>
+            
             <button class="button_panier" @click="addArticle(stock)">Acheter</button>
             
         </div>
       </div>
     </div>
+    
     <div v-else-if="button_hide" >
       <form class="contact-form">
         <h2 class="">Renseignements</h2>
@@ -122,25 +142,7 @@ const boutique = {
 
 
 
-    <div class="cd_panier">
-      <table>
-        <thead>
-          <tr>
-            <td></td>
-            <td>titre </td>
-            <td>prix </td>
-          </tr>
-        </thead>
 
-        <tr v-for="bag in panier">
-          <td><img :src="bag.image" /></td>
-          <td>{{bag.titre}} </td>
-          <td>{{bag.prixht}} </td>
-        </tr>
-        <p>Votre panier est de {{this.total}}</p>
-        <button @click.prevent="show=!show" class="submit-button">Payer</button>
-      </table>
-    </div>
   </div>
 </div>`,
   data: function () {

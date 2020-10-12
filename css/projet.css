@@ -56,6 +56,7 @@
 .cd_panier{
   float: right;
   width:30%;
+  border: 2px solid black;
 }
 
 .titre {
@@ -176,6 +177,26 @@ h2.titre  {
   border-radius: 150px;
 
 }
+
+
+
+.cd_panier td h1 {
+ color: wheat;
+ padding: 5px;
+ background-color: #000;
+ text-align: center;
+ 
+}
+.cd_panier  {
+  background-color: #000;
+}
+.cd_panier td, p{
+  color: wheat;
+}
+.prixht_td{
+  text-align: center;
+}
+
 
 /* Fin form boutique */
 
