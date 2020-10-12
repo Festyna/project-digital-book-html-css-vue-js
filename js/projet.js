@@ -1,3 +1,5 @@
+
+
 const accueil = {
   template: `
 <div class="cd_background">
@@ -52,56 +54,63 @@ const accueil = {
 };
 
 const boutique = {
-  template: `
-    <div >
-        <div>
-          <div class="partie">
-            <div v-for="stock in stocks" class="cards" :img="stocks.image" :title="stocks.titre" :prixht="stocks.prixht" :quantite="stocks.quantite" :date_de_parution="stocks.date_de_parution">
-          
-              <div>
-                <h2 class="titre">{{stock.titre}}</h2>
-                <img id="img" :src="stock.image">
-               
-                  
-                    <p>Prix: {{stock.prixht}} €</p>
-                    <p>Quantité: {{stock.quantite}}</p>
-                    <p>Date de sortie: {{stock.date_de_parution}}</p>               
+  template: `<div>
+  <div class="cd_container">
+    <div class="cd_cards">
+      <div v-for="stock in stocks" :img="stock.image" :title="stock.titre" :prixht="stock.prixht"
+        :quantite="stock.quantite" :date_de_parution="stock.date_de_parution">
 
-              </div><button @click="">Cliquer !!!</button>
-            <button @click="addArticle(stock)">Acheter</button>
-            </div>
-            
-          </div > 
+        <div class="cd_carte">
+          <h2 class="titre">{{stock.titre}}</h2>
+          <img id="img" :src="stock.image">
+
+          <p>Prix: {{stock.prixht}} €</p>
+          <p>Quantité: {{stock.quantite}}</p>
+          <p>Date de sortie: {{stock.date_de_parution}}</p>
+
         </div>
-     
-        <div>
-          <table>
-            <thead>
-              <tr>
-                <td></td>
-                <td>titre </td>
-                <td>prix </td>
-              </tr>
-            </thead>
+        <button class="button_panier" @click="">Cliquer !!!</button>
+        <button class="button_panier" @click="addArticle(stock)">Acheter</button>
+      </div>
+    </div>
 
-              <tr v-for="bag in panier">
-                <td><img :src="bag.image" /></td>
-                <td>{{bag.titre}} </td>
-                <td>{{bag.prixht}} </td>
-              </tr>
 
-          </table>
-        </div>
-  </div >`,
+
+
+
+    <div class="cd_panier">
+      <table>
+        <thead>
+          <tr>
+            <td></td>
+            <td>titre </td>
+            <td>prix </td>
+          </tr>
+        </thead>
+
+        <tr v-for="bag in panier">
+          <td><img :src="bag.image" /></td>
+          <td>{{bag.titre}} </td>
+          <td>{{bag.prixht}} </td>
+        </tr>
+        <p>Votre panier est de {{this.total}}</p>
+
+      </table>
+    </div>
+  </div>
+</div>`,
   data: function () {
     return {
+      total: 0,
+      nb_articles: 0,
+      prix_panier: 0,
       cards: true,
 
       stocks: [{
         id: "01",
         titre: "C'est arrivé la nuit",
-        prixht: "10",
-        quantite: "5",
+        prixht: 10,
+        quantite: 5,
         image: "./assets/images/livre1.jpg",
         date_de_parution: "07/08/2020",
         catégorie: "Roman",
@@ -109,8 +118,8 @@ const boutique = {
       {
         id: "02",
         titre: "Le crepuscule et l'aube",
-        prixht: "8",
-        quantite: "3",
+        prixht: 10,
+        quantite: 3,
         image: "./assets/images/livre2.jpg",
         date_de_parution: "12/04/2020",
         catégorie: "Fantastique",
@@ -118,8 +127,8 @@ const boutique = {
       {
         id: "03",
         titre: "La vie est un roman",
-        prixht: "14",
-        quantite: "12",
+        prixht: 14,
+        quantite: 12,
         image: "./assets/images/livre3.jpg",
         date_de_parution: "21/12/2020",
         catégorie: "Roman",
@@ -127,8 +136,8 @@ const boutique = {
       {
         id: "04",
         titre: "Quelqu'un de bien",
-        prixht: "9",
-        quantite: "7",
+        prixht: 9,
+        quantite: 7,
         image: "./assets/images/livre4.jpg",
         date_de_parution: "14/10/2020",
         catégorie: "Roman",
@@ -136,8 +145,8 @@ const boutique = {
       {
         id: "05",
         titre: "La vie mensongere des adultes",
-        prixht: "13",
-        quantite: "13",
+        prixht: 13,
+        quantite: 13,
         image: "./assets/images/livre5.jpg",
         date_de_parution: "17/06/2020",
         catégorie: "Amour",
@@ -145,8 +154,8 @@ const boutique = {
       {
         id: "06",
         titre: "Nos resiliences",
-        prixht: "13",
-        quantite: "10",
+        prixht: 13,
+        quantite: 10,
         image: "./assets/images/livre6.jpg",
         date_de_parution: "21/09/2020",
         catégorie: "Amour",
@@ -154,8 +163,8 @@ const boutique = {
       {
         id: "07",
         titre: "Ete anglais",
-        prixht: "8",
-        quantite: "5",
+        prixht: 8,
+        quantite: 5,
         image: "./assets/images/livre7.jpg",
         date_de_parution: "19/02/2020",
         catégorie: "Roman",
@@ -163,8 +172,8 @@ const boutique = {
       {
         id: "08",
         titre: "Frangines",
-        prixht: "12",
-        quantite: "15",
+        prixht: 12,
+        quantite: 15,
         image: "./assets/images/livre8.jpg",
         date_de_parution: "16/07/2020",
         catégorie: "Roman",
@@ -172,8 +181,8 @@ const boutique = {
       {
         id: "09",
         titre: "La commode aux tiroirs de couleurs",
-        prixht: "21",
-        quantite: "20",
+        prixht: 21,
+        quantite: 20,
         image: "./assets/images/livre9.jpg",
         date_de_parution: "14/12/2020",
         catégorie: "Roman",
@@ -181,8 +190,8 @@ const boutique = {
       {
         id: "10",
         titre: "Née sous une bonne étoile",
-        prixht: "17",
-        quantite: "10",
+        prixht: 17,
+        quantite: 10,
         image: "./assets/images/livre10.jpg",
         date_de_parution: "12/02/2020",
         catégorie: "Roman",
@@ -190,8 +199,8 @@ const boutique = {
       {
         id: "11",
         titre: "L'énigme de la chambre 622",
-        prixht: "21",
-        quantite: "10",
+        prixht: 21,
+        quantite: 10,
         image: "./assets/images/livre11.jpg",
         date_de_parution: "17/12/2020",
         catégorie: "Roman",
@@ -199,8 +208,8 @@ const boutique = {
       {
         id: "12",
         titre: "La ou chantent les ecrevisses",
-        prixht: "15",
-        quantite: "20",
+        prixht: 15,
+        quantite: 20,
         image: "./assets/images/livre12.jpg",
         date_de_parution: "24/08/2020",
         catégorie: "Amour",
@@ -208,8 +217,8 @@ const boutique = {
       {
         id: "13",
         titre: "Le bal des folles",
-        prixht: "28",
-        quantite: "30",
+        prixht: 28,
+        quantite: 30,
         image: "./assets/images/livre13.jpg",
         date_de_parution: "07/10/2020",
         catégorie: "Roman",
@@ -217,8 +226,8 @@ const boutique = {
       {
         id: "14",
         titre: "Stars",
-        prixht: "11",
-        quantite: "10",
+        prixht: 11,
+        quantite: 10,
         image: "./assets/images/livre14.jpg",
         date_de_parution: "18/10/2020",
         catégorie: "Amour",
@@ -226,8 +235,8 @@ const boutique = {
       {
         id: "15",
         titre: "Une chance sur un milliard",
-        prixht: "21",
-        quantite: "20",
+        prixht: 21,
+        quantite: 20,
         image: "./assets/images/livre15.jpg",
         date_de_parution: "16/03/2020",
         catégorie: "Amour",
@@ -235,8 +244,8 @@ const boutique = {
       {
         id: "16",
         titre: "Crénom baudelaire",
-        prixht: "24",
-        quantite: "20",
+        prixht: 24,
+        quantite: 20,
         image: "./assets/images/livre16.jpg",
         date_de_parution: "21/10/2020",
         catégorie: "Roman",
@@ -244,8 +253,8 @@ const boutique = {
       {
         id: "17",
         titre: "Impact",
-        prixht: "27",
-        quantite: "25",
+        prixht: 27,
+        quantite: 25,
         image: "./assets/images/livre17.jpg",
         date_de_parution: "21/09/2020",
         catégorie: "Roman",
@@ -253,8 +262,8 @@ const boutique = {
       {
         id: "18",
         titre: "L'inconnu de la foret",
-        prixht: "17",
-        quantite: "10",
+        prixht: 17,
+        quantite: 10,
         image: "./assets/images/livre18.jpg",
         date_de_parution: "18/06/2020",
         catégorie: "Roman",
@@ -262,8 +271,8 @@ const boutique = {
       {
         id: "19",
         titre: "L'illusion",
-        prixht: "16",
-        quantite: "10",
+        prixht: 16,
+        quantite: 10,
         image: "./assets/images/livre19.jpg",
         date_de_parution: "24/02/2020",
         catégorie: "Fantastique",
@@ -271,8 +280,8 @@ const boutique = {
       {
         id: "20",
         titre: "Incendie nocturne",
-        prixht: "24",
-        quantite: "20",
+        prixht: 24,
+        quantite: 20,
         image: "./assets/images/livre20.jpg",
         date_de_parution: "18/11/2020",
         catégorie: "Roman",
@@ -280,8 +289,8 @@ const boutique = {
       {
         id: "21",
         titre: "Eugène et moi",
-        prixht: "19",
-        quantite: "10",
+        prixht: 19,
+        quantite: 10,
         image: "./assets/images/livre21.jpg",
         date_de_parution: "14/12/2020",
         catégorie: "Roman",
@@ -289,8 +298,8 @@ const boutique = {
       {
         id: "22",
         titre: "Des ailes d'argent",
-        prixht: "23",
-        quantite: "10",
+        prixht: 23,
+        quantite: 10,
         image: "./assets/images/livre22.jpg",
         date_de_parution: "09/05/2020",
         catégorie: "Amour",
@@ -298,8 +307,8 @@ const boutique = {
       {
         id: "23",
         titre: "Le cri du moloch",
-        prixht: "20",
-        quantite: "15",
+        prixht: 20,
+        quantite: 15,
         image: "./assets/images/livre23.jpg",
         date_de_parution: "27/09/2020",
         catégorie: "Fantastique",
@@ -307,8 +316,8 @@ const boutique = {
       {
         id: "24",
         titre: "L'oracle de gé",
-        prixht: "19",
-        quantite: "20",
+        prixht: 19,
+        quantite: 20,
         image: "./assets/images/livre24.jpg",
         date_de_parution: "13/11/2020",
         catégorie: "Fantastique",
@@ -316,8 +325,8 @@ const boutique = {
       {
         id: "25",
         titre: "Chere mamie",
-        prixht: "28",
-        quantite: "35",
+        prixht: 28,
+        quantite: 35,
         image: "./assets/images/livre25.jpg",
         date_de_parution: "11/11/2020",
         catégorie: "Roman",
@@ -325,8 +334,8 @@ const boutique = {
       {
         id: "26",
         titre: "The Witcher",
-        prixht: "30",
-        quantite: "40",
+        prixht: 30,
+        quantite: 40,
         image: "./assets/images/livre26.jpg",
         date_de_parution: "24/12/2020",
         catégorie: "Fantastique",
@@ -334,8 +343,8 @@ const boutique = {
       {
         id: "27",
         titre: "L'affaire charles dexter ward",
-        prixht: "28",
-        quantite: "25",
+        prixht: 28,
+        quantite: 25,
         image: "./assets/images/livre27.jpg",
         date_de_parution: "15/06/2020",
         catégorie: "Roman",
@@ -343,8 +352,8 @@ const boutique = {
       {
         id: "28",
         titre: "Cendrillon",
-        prixht: "27",
-        quantite: "20",
+        prixht: 27,
+        quantite: 20,
         image: "./assets/images/livre28.jpg",
         date_de_parution: "09/07/2020",
         catégorie: "Amour",
@@ -352,8 +361,8 @@ const boutique = {
       {
         id: "29",
         titre: "Demon slayer",
-        prixht: "27",
-        quantite: "20",
+        prixht: 27,
+        quantite: 20,
         image: "./assets/images/livre29.jpg",
         date_de_parution: "13/07/2020",
         catégorie: "Fantastique",
@@ -361,8 +370,8 @@ const boutique = {
       {
         id: "30",
         titre: "La belle et la bete",
-        prixht: "30",
-        quantite: "25",
+        prixht: 30,
+        quantite: 25,
         image: "./assets/images/livre30.jpg",
         date_de_parution: "12/10/2020",
         catégorie: "Amour",
@@ -374,26 +383,37 @@ const boutique = {
   methods: {
     addArticle: function (stock) {
       this.panier.push(stock)
+      console.log(stock)
+      var ht = 0;
+      console.log(this.nb_articles);
+      this.panier.forEach(element => {
+        console.log("element ht" + element.prixht)
+        ht += element.prixht;
+        console.log("ht", ht)
+      })
+      this.total = ht * 1.20;
+
     }
+
   },
 
 };
 const livre_or = {
   template: `
-    <div>
-        <div id="app">
-            <form>
-                
-        <input v-model="date" placeholder="Entrez la date">
-        <input v-model="pseudo" placeholder="Entrez votre pseudo">
-        <input v-model="message" placeholder="Entrez votre message">
+    <div class="cd-livreor">
+        
+            <form class="form_livreor">
+               <div v-for="livre_or in commentaire">
+                    <h1>Le {{livre_or.date}} {{livre_or.pseudo}} a écrit : {{livre_or.message}}</h1>
+                </div> 
+        <input v-model="date" placeholder=" Entrez la date" class="inputlivre">
+        <input v-model="pseudo" placeholder=" Entrez votre pseudo" class="inputlivre">
+        <input v-model="message" placeholder=" Entrez votre message" class="inputlivre">
 
                 <button type="submit" v-on:click="addCom">Envoyer</button>
-                <div v-for="livre_or in commentaire">
-                    <h1>Le {{livre_or.date}} {{livre_or.pseudo}} a écrit : {{livre_or.message}}</h1>
-                </div>
+                
             </form>
-        </div>
+       
     </div>`,
 
   data: function () {
@@ -498,6 +518,7 @@ var vm = new Vue({
     message: "",
     disparaitre: true,
     message: false,
+
 
     todos: [{
       pseudo: "Steven",

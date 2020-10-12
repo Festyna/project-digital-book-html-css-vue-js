@@ -1,6 +1,6 @@
 /*cards amaury debut*/
 
-/* .popup {
+.popup {
   border: 4px solid green;
   font-size: 75px;
   width: 250px;
@@ -9,24 +9,24 @@
 
 /*cards*/
 
-/* .description {
+.description {
   color: black;
 
 }
 
-.cards-enter-active,
-.cards-leave-active {
+/* .show-enter-active,
+.show-leave-active {
   transition: opacity 1.5s;
-  color: red;
+  
 }
 
-.cards-enter,
-.cards-leave-to {
+.show-enter,
+.show-leave-to {
   opacity: 0;
-  color: blue;
-}
+   */
 
-.shows-enter-active,
+
+/* .shows-enter-active,
 .shows-leave-active {
   transition: opacity 1.5s;
   color: yellow;
@@ -36,7 +36,7 @@
 .shows-leave-to {
   opacity: 0;
   color: green;
-}
+} */
 
 
 .alignement {
@@ -47,28 +47,120 @@
   text-align: center;
 }
 
-.cards {
-  margin: 25px;
+
+.cd_cards {
+  float: left;
+  width:50%;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 200px;
+  grid-auto-rows: 200px;
+  
 }
 
-.partie {
-  width: 250px;
-  border: 1px black solid;
+.cd_carte {
+  border: 5px black solid;
+  border-radius:0 20px 0 20px;
+  padding: 2px;
+  background-color: wheat;
+  
+
+}
+
+
+.cd_container {
+  margin-left: 30px;
+  margin-top: 30px;
+  height: 4000px;
+}
+.cd_panier{
+  float: right;
+  width:30%;
 }
 
 .titre {
 
-  color: white;
-  background-color: rgb(75, 0, 0);
+  color: wheat;
+  background-color: black;
+  font-size: 20px
 }
 
-img {
+.partie img {
   height: 200px;
   width: auto;
 
-} */
+}
+h2.titre  {
+  height: 79.2px;
+  text-align: center;
+}
 
-/*cards amaury fin*/
+* {
+  box-sizing: border-box;
+}
+
+.cd-livreor {
+  background-image: url(/assets/images/livreor.jpg);
+  background-size: cover;
+  background-position: center center;
+  
+  height: 800px;
+}
+/* bouton carte boutique */
+.button_panier{
+  background-color: #3498db;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 12px;
+  font-size: 8px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 5px #2980b9;
+  outline: none;
+}
+.button_panier:hover {
+  box-shadow: 0 3px #2980b9;
+  transform: translateY(2px)
+}
+.button_panier:active{
+  box-shadow: 2px #2980b9;
+  transform: translateY(4px);
+}
+/* Fin bouton */
+
+/* Input livre or */
+
+.form_livreor {
+  margin-left: 10px;
+}
+.inputlivre {
+  border: 1px solid grey;
+  border-radius: 2px;
+  padding: 5px;
+  transition: all 0.5s ease;
+}
+
+.inputlivre:focus {
+  background-color: black;
+  color: wheat;
+}
+
+.form_livreor button[type=submit]{
+  background-color: whitesmoke;
+  border: 1px solid red;
+  padding: 5px;
+  color: red;
+  transition: all 0.5s ease;
+  border-radius: 2px;
+}
+.form_livreor button[type=submit]:hover {
+  background-color: black;
+  color: wheat;
+  border-radius: 150px;
+}
+/* Fin input */
 
 /* Partie Steven */
 
@@ -165,7 +257,7 @@ bi-stickies-angle-right {
 }
 
 .logo {
-  position: fixed;
+  position: absolute;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -443,30 +535,6 @@ footer {
 }
 
 /* fin de page contact.html*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*card avec effect girl */
 * {
