@@ -543,6 +543,7 @@ const formulaire_contact = {
       message: false,
     };
   },
+  
 };
 
 var routes = [{
