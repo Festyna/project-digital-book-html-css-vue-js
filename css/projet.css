@@ -102,6 +102,8 @@ h2.titre  {
 .lsh_livre_or{
   text-align:center;
   padding-top:30px;
+  
+
 }
 
 
@@ -130,19 +132,32 @@ h2.titre  {
 
 /* Input livre or */
 
-.form_livreor {
-  margin-left: 10px;
-}
+
 .inputlivre {
   border: 1px solid grey;
-  border-radius: 2px;
-  padding: 5px;
+  border-radius: 10px;
+  padding: 10px;
   transition: all 0.5s ease;
+  padding: 10px;
+  font-size: 15px;
+  width: 20%;
+  text-align: center;
+  margin-top: 15px;
+  
 }
 
 .inputlivre:focus {
   background-color: black;
   color: wheat;
+}
+
+.form_livreor h1 {
+  font-family: 'Sansita Swashed', cursive;
+  color: aqua;
+}
+
+.form_livreor h1:before {
+  content: url("/assets/images/stars.png");
 }
 
 .form_livreor button[type=submit]{
@@ -197,6 +212,12 @@ h2.titre  {
  background-color: #000;
  text-align: center;
  
+}
+
+.para_panier {
+  color: wheat;
+
+
 }
 .cd_panier  {
   background-color: #000;
