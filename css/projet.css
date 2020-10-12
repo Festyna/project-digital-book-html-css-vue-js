@@ -1,11 +1,20 @@
 /*cards amaury debut*/
 
-.lsh_popup {
-  background-color:rgba(38, 124, 64, 0.822);
+.lsh_popup{
+  background-color:rgb(232, 216, 156);
   color:rgb(63, 61, 61);
-  border: 8px solid  rgba(255, 255, 255, 0.836);
+  border: 8px solid  rgba(125, 84, 56, 0.906);
   font-size: 75px;
   width: 100%;
+  text-align: center;
+  padding-bottom:20px;
+}
+.lsh_popup_boutique{
+width: 50%;
+background-color:rgb(232, 216, 156);
+  color:rgb(63, 61, 61);
+  border: 8px solid  rgba(125, 84, 56, 0.906);
+  font-size: 75px;
   text-align: center;
   padding-bottom:20px;
 }
@@ -50,7 +59,7 @@
 .cd_container {
   margin-left: 30px;
   margin-top: 30px;
-  height: 4000px;
+  height: 4050px;
 }
 
 .cd_panier{
@@ -87,7 +96,6 @@ h2.titre  {
   height: 800px;
 }
 .lsh_livre_or{
-  min-height:500px;
   text-align:center;
   padding-top:30px;
 }
@@ -533,6 +541,9 @@ footer {
   color: #151515;
   cursor: pointer;
 }
+.cd_contact_boutique{
+  width:100%;
+}
 /* fin page contact.html*/
 
 
@@ -580,8 +591,6 @@ body {
   width: 300px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 5px;
   transition: 1s all ease;
 
 }
@@ -744,6 +753,13 @@ body {
   border-radius: 50px;
   background: linear-gradient(to right, #683101 0%, #9f9f05 100%);
   /*couleur de mon bouton */
+}
+.ste_container
+{
+  background-image: url(./creer-ses-personnages-1024x731peti\ copie.jpg);
+padding: 50px;
+margin: 0;
+
 }
 
 /* Fin partie steeven */
