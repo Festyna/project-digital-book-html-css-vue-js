@@ -68,7 +68,7 @@ const boutique = {
       <td class="prixht_td">{{bag.prixht}}€HT</td>
     </tr>
     <p>Votre panier est de {{this.total}} Euros</p>
-    <button @click.prevent="show=!show" class="submit-button" >Payer</button>
+    <button @click.prevent="show=!show" class="submit-button">Payer</button>
   </table>
 </div>
     <div v-if="show">
@@ -96,11 +96,11 @@ const boutique = {
       <form class="contact-form">
         <h2 class="">Renseignements</h2>
         <br>
-        <input v-model="renseignementNom" placeholder=" Entrez votre nom" class="inputcontact">
+        <input v-model="renseignementNom" @keyup="renNom(renseignementNom)" placeholder=" Entrez votre nom" class="inputcontact">
         <br>
-        <input v-model="renseignementPrenom" placeholder=" Entrez votre prenom" class="inputcontact">
+        <input v-model="renseignementPrenom" @keyup="renPrenom(renseignementPrenom)" placeholder=" Entrez votre prenom" class="inputcontact">
         <br>
-        <input v-model="renseignementAge" placeholder=" Entrez votre age" class="inputcontact">
+        <input v-model="renseignementAge" @keyup="renAge(renseignementAge)" placeholder=" Entrez votre age" class="inputcontact">
         <br>
 
         <input type="checkbox" name="consentement" id="consent" />
@@ -136,17 +136,12 @@ const boutique = {
         <br>
         
 
-        <button @click.prevent="message_confirmation=!message_confirmation" :disabled="isDisabled" v-class="submit-button">Envoyer</button>
+        <button @click.prevent="message_confirmation=!message_confirmation" :disabled="isDisabledVerif" v-class="submit-button">Envoyer</button>
       </form>
     </div>
-    <div v-else>
-      Bon appétit !
+    <div v-else >
+      <h6 class="lsh_popup_boutique">Votre commande a bien été enregistrée !</h6>
     </div>
-    
-
-
-
-
   </div>
 </div>`,
   data: function () {
@@ -159,18 +154,27 @@ const boutique = {
       show: true,
       disparaitre: false,
       message_confirmation: true,
+
       renseignementNom: "",
       renseignementPrenom: "",
       renseignementAge: "",
+
       adresseNom: "",
       adresseAdresse: "",
       adresseCodepostal: "",
       adresseVille: "",
+
+      renNomOk: false,
+      renPrenomOk: false,
+      renAgeOk: false,
+
       adresseNomOk: false,
       adressePrenomOk: false,
       adresseCodepostalOk: false,
       adresseVilleOk: false,
-      isDisable: true,
+
+      isDisabled: true,
+      isDisabledVerif: true,
 
 
       stocks: [{
@@ -462,9 +466,49 @@ const boutique = {
     },
     disabledFree: function () {
       if (this.adresseNomOk && this.adressePrenomOk && this.adresseCodepostalOk && this.adresseVilleOk) {
+        this.isDisabledVerif = false;
+      }
+    },
+
+    disabledFreeRen: function () {
+      if (this.renNomOk && this.renPrenomOk && this.renAgeOk) {
         this.isDisabled = false;
       }
     },
+
+
+    renNom: function (text) {
+      if (isNaN(text) && text !== "null") {
+        console.log(text),
+          this.renNomOk = true;
+      } else {
+        this.renNomOk = false;
+      }
+      this.disabledFreeRen();
+    },
+
+    renPrenom: function (text) {
+      if (isNaN(text) && text !== "null") {
+        console.log(text),
+          this.renPrenomOk = true;
+      } else {
+        this.renPrenomOk = false;
+      }
+      this.disabledFreeRen();
+    },
+
+    renAge: function (text) {
+      if (isNaN(text) && text !== "null") {
+        console.log(text),
+          this.renAgeOk = true;
+      } else {
+        this.renAgeOk = false;
+      }
+      this.disabledFreeRen();
+    },
+
+
+
     verifNom: function (text) {
       if (isNaN(text) && text !== "null") {
         console.log(text),
@@ -474,6 +518,7 @@ const boutique = {
       }
       this.disabledFree();
     },
+
     verifPrenom: function (text) {
       if (isNaN(text) && text !== "null") {
         console.log(text),
