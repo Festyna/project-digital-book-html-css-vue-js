@@ -117,13 +117,13 @@ const boutique = {
     </div>
     <div v-else-if="message_confirmation" >
       <form class="adresse-form">
-      <h2 class="">Adresse :</h2>
+      <h2 class="">Adresse de livraison :</h2>
       <br>
       <input v-model="adresseNom" @keyup="verifNom(adresseNom)" placeholder=" Entrez votre nom" class="inputcontact">
       <br>
       <input v-model="adressePrenom" @keyup="verifPrenom(adressePrenom)" placeholder=" Entrez votre prenom" class="inputcontact">
       <br>
-      <input v-model="adresseCodepostal" @keyup="verifCP(adresseCodepostal)" placeholder=" Entrez votre code postal" class="inputcontact">
+      <input v-model="adresseCodepostal" @keyup="verifCP(adresseCodepostal)" maxlength="5" placeholder=" Entrez votre code postal" class="inputcontact">
       <br>
       <input v-model="adresseVille" @keyup="verifVille(adresseVille)" placeholder=" Entrez votre ville" class="inputcontact">
       <br>
@@ -497,9 +497,9 @@ const boutique = {
       this.disabledFreeRen();
     },
 
-    renAge: function (text) {
-      if (isNaN(text) && text !== "null") {
-        console.log(text),
+    renAge: function (num) {
+      if (!isNaN(num) && num >= 18 && num !== "null") {
+        console.log(num),
           this.renAgeOk = true;
       } else {
         this.renAgeOk = false;
@@ -528,9 +528,9 @@ const boutique = {
       }
       this.disabledFree();
     },
-    verifCP: function (text) {
-      if (isNaN(text) && text !== "null") {
-        console.log(text),
+    verifCP: function (num) {
+      if (!isNaN(num) && num !== "null") {
+        console.log(num),
           this.adresseCodepostalOk = true;
       } else {
         this.adresseCodepostalOk = false;
