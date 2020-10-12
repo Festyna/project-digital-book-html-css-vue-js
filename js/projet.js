@@ -53,12 +53,14 @@ const boutique = {
   template: `<div>
   <div class="cd_container ste_container">
   <div class="cd_panier">
+  
   <table>
     <thead>
       <tr>
-        <td></td>
-        <td><h1>titre: </h1></td>
-        <td><h1>prix: </h1></td>
+        <td><p class="lsh_panier_apparent">Votre panier est de {{this.total}} €</p>
+        <button @click.prevent="show=!show" class="submit-button">Acheter</button></td>
+        <td><h1>Titre: </h1></td>
+        <td><h1>Prix: </h1></td>
       </tr>
     </thead>
 
@@ -66,9 +68,10 @@ const boutique = {
       <td><img :src="bag.image"/></td>
       <td>{{bag.titre}} </td>
       <td class="prixht_td">{{bag.prixht}}€HT</td>
+      <td><button class="submit-button" @click.prevent="del">Supprimer</button></td></td>
     </tr>
-    <p>Votre panier est de {{this.total}} Euros</p>
-    <button @click.prevent="show=!show" class="submit-button">Payer</button>
+    
+    
   </table>
 </div>
     <div v-if="show">
@@ -452,6 +455,17 @@ const boutique = {
     };
   },
   methods: {
+    del: function (index) {
+      this.panier.splice(index, 1);
+      var ht = 0;
+      this.panier.forEach(element => {
+        console.log("element ht" + element.prixht)
+        ht = element.prixht - ht;
+        console.log("ht", ht)
+      })
+      this.total = ht * 1.20;
+    },
+
     addArticle: function (stock) {
       this.panier.push(stock)
       console.log(stock)

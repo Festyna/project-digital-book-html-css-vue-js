@@ -18,7 +18,10 @@ background-color:rgb(232, 216, 156);
   text-align: center;
   padding-bottom:20px;
 }
-
+.lsh_panier_apparent{
+  Font-size:15px;
+  color: rgb(232, 216, 156);
+}
 /*cards*/
 
 .description {
@@ -156,7 +159,6 @@ h2.titre  {
   border-radius: 150px;
 }
 /* Fin input */
-
 /* Formulaire contact boutique */
 
 .inputcontact{
