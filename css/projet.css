@@ -158,7 +158,7 @@ h2.titre  {
 
 .form_livreor h1 {
   font-family: 'Sansita Swashed', cursive;
-  color: aqua;
+  color: rgb(61, 61, 61);
 }
 
 .form_livreor h1:before {
@@ -252,9 +252,8 @@ h2.titre  {
 
 .cd_background {
   background-image: url("./narrative-794978_1920.jpg");
-  background-size: fixed;
-  min-height: 115vh;
-  -webkit-background-size: cover;
+  background-position: center bottom;
+  background-size: cover;
 }
 
 .menu-bar {
@@ -357,7 +356,7 @@ body {
 #slideshow {
   margin: 0 auto;
   top: 50%;
-  height: 600px;
+  height: 830px;
   width: 100%;
   box-sizing: border-box;
 }
